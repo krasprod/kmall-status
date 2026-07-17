@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>KMALL × KRASPROD — статус проєкту</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap&subset=cyrillic,latin" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0c0e; --ink-2:#16181c; --cream:#f4efe7; --cream-soft:#cabfb1; --cream-mut:#a99e90;
+  --gold:#fdd506; --gold-deep:#e6be00; --hair-d:rgba(244,239,231,.14); --hair-d2:rgba(244,239,231,.24);
+  --r:26px; --r-sm:14px; --maxw:960px; --pad:clamp(20px,5vw,64px);
+  --sans:'Inter',-apple-system,system-ui,sans-serif; --display:'Inter Tight',var(--sans); --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+header{padding:clamp(48px,7vw,90px) 0 clamp(28px,4vw,44px)}
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);border:1px solid var(--hair-d2);border-radius:8px;padding:8px 14px;margin-bottom:22px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.04;letter-spacing:-.01em}
+h1 .gold{color:var(--gold)}
+.lead{margin-top:16px;max-width:560px;color:var(--cream-soft);font-size:clamp(1rem,1.2vw,1.1rem);line-height:1.55}
+.updated{margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-mut)}
+.updated b{color:var(--gold);font-weight:500}
+
+.progress{margin:26px 0 0;max-width:560px}
+.progress .bar{height:6px;border-radius:999px;background:var(--ink-2);border:1px solid var(--hair-d);overflow:hidden}
+.progress .fill{height:100%;width:6%;background:linear-gradient(90deg,var(--gold-deep),var(--gold));border-radius:999px;transition:width .6s cubic-bezier(.22,.61,.36,1)}
+.progress .cap{margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-mut)}
+
+.callout{margin:34px 0 0;background:rgba(253,213,6,.07);border:1px solid rgba(253,213,6,.28);border-radius:var(--r-sm);padding:18px 22px}
+.callout .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.callout p{color:var(--cream-soft);font-size:.95rem}
+.callout p b{color:var(--cream);font-weight:600}
+
+main{padding:clamp(24px,4vw,48px) 0 clamp(64px,8vw,110px)}
+.stage{background:rgba(12,11,10,.5);border:1px solid var(--hair-d);border-radius:var(--r);padding:clamp(22px,3.4vw,36px);margin-bottom:26px;backdrop-filter:blur(18px)}
+.stage-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.stage-num{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--cream-mut)}
+.stage h2{font-family:var(--display);font-weight:600;font-size:clamp(1.25rem,1.9vw,1.6rem);letter-spacing:-.01em}
+.badge{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:6px 12px;margin-left:auto}
+.badge.done{background:var(--gold);color:var(--ink)}
+.badge.now{background:transparent;color:var(--gold);border:1px solid rgba(253,213,6,.5)}
+.badge.wait{background:transparent;color:var(--cream-mut);border:1px solid var(--hair-d)}
+.stage .desc{color:var(--cream-mut);font-size:.92rem;margin-bottom:18px;max-width:640px}
+ul.check{list-style:none}
+ul.check li{display:flex;gap:14px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--hair-d);font-size:.97rem;color:var(--cream-soft)}
+ul.check li:first-child{border-top:0}
+.tick{flex:0 0 22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px}
+li.done .tick{background:var(--gold);color:var(--ink);font-weight:700}
+li.done{color:var(--cream)}
+li.now .tick{border:1.5px solid var(--gold);color:var(--gold)}
+li.now{color:var(--cream)}
+li.now .lbl::after{content:"— в роботі";font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-left:10px}
+li.todo .tick{border:1.5px solid var(--hair-d2);color:transparent}
+
+.safe{border:1px solid var(--hair-d);border-radius:var(--r);padding:clamp(22px,3.4vw,36px);margin-bottom:26px}
+.safe h2{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,1.7vw,1.45rem);margin-bottom:6px}
+.safe h2 .gold{color:var(--gold)}
+.safe p{color:var(--cream-mut);font-size:.92rem;max-width:640px;margin-bottom:16px}
+.safe ul{list-style:none}
+.safe li{display:flex;gap:12px;padding:9px 0;color:var(--cream-soft);font-size:.95rem;border-top:1px solid var(--hair-d)}
+.safe li:first-child{border-top:0}
+.safe .lock{color:var(--gold-deep);flex:0 0 18px}
+
+.log h2{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,1.7vw,1.45rem);margin-bottom:18px}
+.log-item{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:14px 0;border-top:1px solid var(--hair-d)}
+.log-item .d{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--gold-deep);padding-top:3px}
+.log-item p{color:var(--cream-soft);font-size:.95rem}
+@media(max-width:560px){.log-item{grid-template-columns:1fr;gap:4px}}
+
+footer{border-top:1px solid var(--hair-d);padding:26px 0 46px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+footer .who{font-family:var(--display);font-weight:600}
+footer .tg{margin-left:auto;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--cream-mut);text-decoration:none;border:1px solid var(--hair-d2);border-radius:999px;padding:9px 18px;transition:.2s}
+footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="eyebrow">KMALL COSMETICS × KRASPROD</span>
+    <h1>Статус проєкту:<br>налаштування <span class="gold">KeyCRM</span></h1>
+    <p class="lead">Жива сторінка проєкту. Тут видно, що вже зроблено, що в роботі просто зараз і що попереду — крок за кроком, без дзвінків і звітів.</p>
+    <div class="progress">
+      <div class="bar"><div class="fill" style="width:6%"></div></div>
+      <div class="cap">Загальний прогрес — старт проєкту</div>
+    </div>
+    <p class="updated">Оновлено: <b>17.07.2026</b></p>
+
+    <div class="callout">
+      <div class="t">Наступний крок</div>
+      <p>Чекаємо від вас: <b>реквізити ФОП</b> для рахунку, <b>логіку кас</b> (що на розрахунковий рахунок, що готівкою) та <b>пороги знижок</b>. Щойно отримаємо — стартує Етап 1.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="stage">
+      <div class="stage-head">
+        <span class="stage-num">ЕТАП 0</span>
+        <h2>Знайомство та аудит</h2>
+        <span class="badge done">Виконано</span>
+      </div>
+      <p class="desc">Розібралися, що вже працює у вашій системі, що можна налаштувати, а чого в KeyCRM не існує — і як це чесно обійти.</p>
+      <ul class="check">
+        <li class="done"><span class="tick">✓</span><span class="lbl">Повний аудит вашої KeyCRM зсередини</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Перевірено можливості системи по кожному вашому запиту</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Узгоджено обсяг робіт та етапи</span></li>
+      </ul>
+    </section>
+
+    <section class="stage">
+      <div class="stage-head">
+        <span class="stage-num">ЕТАП 1</span>
+        <h2>Налаштування CRM</h2>
+        <span class="badge now">В роботі</span>
+      </div>
+      <p class="desc">Фінанси, документи, знижки та склад — щоб менеджерам було зручно, а гроші рахувалися самі.</p>
+      <ul class="check">
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Фінанси: рахунки (ФОП + готівкова каса) та правила — які оплати й витрати куди йдуть</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Друк рахунку покупцю — фірмова форма KMALL, одна кнопка із замовлення</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Друк інвентаризації — лист для звірки на складі</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Рівні знижок від суми покупок — автоматично</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Постачальники: розділ у CRM та привʼязка до замовлень</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Статуси та автоматизація під ваші процеси</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Реєстр Нової Пошти — поверх вашої робочої інтеграції</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Здача: проходимо все разом + коротка інструкція</span></li>
+      </ul>
+    </section>
+
+    <section class="stage">
+      <div class="stage-head">
+        <span class="stage-num">ЕТАП 2</span>
+        <h2>Бот списання товару</h2>
+        <span class="badge wait">Попереду</span>
+      </div>
+      <p class="desc">Окремого документа списання в KeyCRM немає — тому робимо свій інструмент: телеграм-бот, який списує товар з причиною й коментарем і веде журнал.</p>
+      <ul class="check">
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Бот: вибір товару, складу, кількості, причини та коментаря</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Автоматичне списання залишку в KeyCRM</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Журнал усіх списань — видно, скільки пішло в брак, на промо тощо</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Доступ лише для ваших співробітників, робота 24/7</span></li>
+      </ul>
+    </section>
+
+    <section class="stage">
+      <div class="stage-head">
+        <span class="stage-num">ЕТАП 3</span>
+        <h2>Таблиці: взаєморозрахунки та каси</h2>
+        <span class="badge wait">Попереду</span>
+      </div>
+      <p class="desc">Google-таблиця, яка сама тягне дані з CRM: взаєморозрахунки з постачальниками та зведення по грошах у будь-який момент.</p>
+      <ul class="check">
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Автовивантаження замовлень і оплат з KeyCRM за розкладом</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Лист постачальників і приходів + акт звірки формулами</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Зведення кас: заморожено в НП / ФОП / готівка</span></li>
+        <li class="todo"><span class="tick">✓</span><span class="lbl">Журнал списань з бота — в цій самій таблиці</span></li>
+      </ul>
+    </section>
+
+    <section class="safe">
+      <h2>Що лишається <span class="gold">недоторканим</span></h2>
+      <p>Усе, що у вас уже працює і коштувало часу та грошей, ми не чіпаємо. Налаштовуємо поруч і зверху — не поверх.</p>
+      <ul>
+        <li><span class="lock">●</span>Інтеграція Нової Пошти та Укрпошти — генерація ТТН і стікерів працює як працювала</li>
+        <li><span class="lock">●</span>TurboSMS-розсилки — не відкриваємо взагалі</li>
+        <li><span class="lock">●</span>Звʼязка CRM з сайтом kmall.com.ua — без змін</li>
+        <li><span class="lock">●</span>Ваші товари, залишки та історія замовлень — нічого не видаляємо</li>
+      </ul>
+    </section>
+
+    <section class="log">
+      <h2>Журнал проєкту</h2>
+      <div class="log-item">
+        <span class="d">17.07.2026</span>
+        <p>Проведено повний аудит KeyCRM. Узгоджено обсяг і етапи робіт. Домовилися про формат оплати та старт. Чекаємо вводні для Етапу 1: реквізити, логіка кас, пороги знижок.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;width:100%">
+    <span class="who">Андрій Красик</span>
+    <a class="tg" href="https://t.me/krasprod">Telegram — @krasprod</a>
+  </div>
+</footer>
+</body>
+</html>
