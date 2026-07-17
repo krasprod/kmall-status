@@ -29,7 +29,7 @@ h1 .gold{color:var(--gold)}
 
 .progress{margin:26px 0 0;max-width:560px}
 .progress .bar{height:6px;border-radius:999px;background:var(--ink-2);border:1px solid var(--hair-d);overflow:hidden}
-.progress .fill{height:100%;width:6%;background:linear-gradient(90deg,var(--gold-deep),var(--gold));border-radius:999px;transition:width .6s cubic-bezier(.22,.61,.36,1)}
+.progress .fill{height:100%;width:14%;background:linear-gradient(90deg,var(--gold-deep),var(--gold));border-radius:999px;transition:width .6s cubic-bezier(.22,.61,.36,1)}
 .progress .cap{margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-mut)}
 
 .callout{margin:34px 0 0;background:rgba(253,213,6,.07);border:1px solid rgba(253,213,6,.28);border-radius:var(--r-sm);padding:18px 22px}
@@ -67,6 +67,17 @@ li.todo .tick{border:1.5px solid var(--hair-d2);color:transparent}
 .safe li:first-child{border-top:0}
 .safe .lock{color:var(--gold-deep);flex:0 0 18px}
 
+.pay{border:1px solid var(--hair-d);border-radius:var(--r);padding:clamp(22px,3.4vw,36px);margin-bottom:26px}
+.pay h2{font-family:'Buyan',var(--display);font-weight:600;font-size:clamp(1.15rem,1.7vw,1.45rem);margin-bottom:4px}
+.pay .sub{color:var(--cream-mut);font-size:.9rem;margin-bottom:18px}
+.pay-row{display:grid;grid-template-columns:130px 1fr auto auto;gap:18px;align-items:center;padding:15px 0;border-top:1px solid var(--hair-d)}
+.pay-row .d{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--gold-deep)}
+.pay-row .what{color:var(--cream);font-size:.97rem}
+.pay-row .sum{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--cream);white-space:nowrap}
+.pay-row .st{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--ink);border-radius:999px;padding:6px 12px}
+.pay-row.pending .st{background:transparent;color:var(--cream-mut);border:1px solid var(--hair-d)}
+.pay-row.pending .sum,.pay-row.pending .what{color:var(--cream-mut)}
+@media(max-width:600px){.pay-row{grid-template-columns:1fr auto;gap:6px 14px}.pay-row .d{grid-column:1/-1}}
 .log h2{font-family:'Buyan',var(--display);font-weight:600;font-size:clamp(1.15rem,1.7vw,1.45rem);margin-bottom:18px}
 .log-item{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:14px 0;border-top:1px solid var(--hair-d)}
 .log-item .d{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--gold-deep);padding-top:3px}
@@ -86,14 +97,14 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
     <h1>Статус проєкту:<br>налаштування <span class="gold">KeyCRM</span></h1>
     <p class="lead">Жива сторінка проєкту. Тут видно, що вже зроблено, що в роботі просто зараз і що попереду — крок за кроком, без дзвінків і звітів.</p>
     <div class="progress">
-      <div class="bar"><div class="fill" style="width:6%"></div></div>
-      <div class="cap">Загальний прогрес — старт проєкту</div>
+      <div class="bar"><div class="fill" style="width:14%"></div></div>
+      <div class="cap">Загальний прогрес — Етап 1 стартував</div>
     </div>
     <p class="updated">Оновлено: <b>17.07.2026</b></p>
 
     <div class="callout">
       <div class="t">Наступний крок</div>
-      <p>Реквізити ФОП та логіку кас <b>отримали</b> ✓. Лишилися <b>пороги знижок</b> — чекаємо завтра, і стартує Етап 1. Нюанс з накладеним платежем НП (після підписання договору піде на розрахунковий рахунок) — врахували в налаштуванні.</p>
+      <p>Реквізити ФОП, логіку кас та передоплату Етапу 1 <b>отримали</b> ✓ — стартуємо налаштування. Лишилися <b>пороги знижок</b> — чекаємо завтра. Нюанс з накладеним платежем НП (після підписання договору піде на розрахунковий рахунок) — врахували.</p>
     </div>
   </div>
 </header>
@@ -175,8 +186,29 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
       </ul>
     </section>
 
+    <section class="pay">
+      <h2>Оплати за проєктом</h2>
+      <p class="sub">Прозоро: кожен платіж — з датою та за що. Схема 50/50 по кожному етапу.</p>
+      <div class="pay-row">
+        <span class="d">17.07.2026</span>
+        <span class="what">Етап 1 · Налаштування CRM — передоплата 50%</span>
+        <span class="sum">3 000 ₴</span>
+        <span class="st">Оплачено</span>
+      </div>
+      <div class="pay-row pending">
+        <span class="d">за фактом</span>
+        <span class="what">Етап 1 · Налаштування CRM — після здачі</span>
+        <span class="sum">3 000 ₴</span>
+        <span class="st">Очікує</span>
+      </div>
+    </section>
+
     <section class="log">
       <h2>Журнал проєкту</h2>
+      <div class="log-item">
+        <span class="d">17.07 · 23:08</span>
+        <p>Передоплата Етапу 1 (3 000 ₴) отримана. Стартуємо налаштування CRM — починаємо з фінансів. Пороги знижок чекаємо завтра.</p>
+      </div>
       <div class="log-item">
         <span class="d">17.07 · вечір</span>
         <p>Отримано реквізити ФОП та логіку кас (безнал / готівка, включно з нюансом накладеного платежу НП). Лишилися пороги знижок — і стартуємо.</p>
