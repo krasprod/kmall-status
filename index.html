@@ -144,7 +144,7 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
         <li class="todo"><span class="tick">✓</span><span class="lbl">Склади: кілька складів та коректне списання, коли в одній накладній товар з різних складів</span></li>
         <li class="todo"><span class="tick">✓</span><span class="lbl">Синхронізація залишків із сайтом — щоб не можна було замовити те, чого вже немає</span></li>
         <li class="todo"><span class="tick">✓</span><span class="lbl">Перенести списання на статус «Передан в доставку» (погоджено)</span></li>
-        <li class="todo"><span class="tick">✓</span><span class="lbl">Вимкнути автовидалення замовлень, які не синхронізувалися (погоджено)</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Вимкнено автовидалення замовлень, які не синхронізувалися</span></li>
         <li class="todo"><span class="tick">✓</span><span class="lbl">Здача: проходимо все разом + коротка інструкція</span></li>
       </ul>
     </section>
@@ -209,6 +209,10 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
 
     <section class="log">
       <h2>Журнал проєкту</h2>
+      <div class="log-item">
+        <span class="d">18.07 · 15:35</span>
+        <p><b>Зроблено:</b> вимкнено автоматичне видалення замовлень. Тепер збій синхронізації не може стерти замовлення покупця — воно просто залишиться на сайті.</p>
+      </div>
       <div class="log-item">
         <span class="d">18.07 · 15:20</span>
         <p>Знайшли ризиковану настройку: плагін був налаштований <b>назавжди видаляти</b> замовлення, які не синхронізувалися з CRM. Тобто збій — і замовлення зникає з обох систем без сліду. Погодили вимкнути.</p>
