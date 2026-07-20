@@ -31,6 +31,7 @@ h1 .gold{color:var(--gold)}
 .progress .bar{height:6px;border-radius:999px;background:var(--ink-2);border:1px solid var(--hair-d);overflow:hidden}
 .progress .fill{height:100%;width:14%;background:linear-gradient(90deg,var(--gold-deep),var(--gold));border-radius:999px;transition:width .6s cubic-bezier(.22,.61,.36,1)}
 .progress .cap{margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-mut)}
+.progress .pct{font-family:'Buyan',var(--display);font-size:2rem;font-weight:600;color:var(--gold);line-height:1;margin-bottom:10px;display:block}
 
 .callout{margin:34px 0 0;background:rgba(253,213,6,.07);border:1px solid rgba(253,213,6,.28);border-radius:var(--r-sm);padding:18px 22px}
 .callout .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -97,6 +98,7 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
     <h1>Статус проєкту:<br>налаштування <span class="gold">KeyCRM</span></h1>
     <p class="lead">Жива сторінка проєкту. Тут видно, що вже зроблено, що в роботі просто зараз і що попереду — крок за кроком, без дзвінків і звітів.</p>
     <div class="progress">
+      <span class="pct">90%</span>
       <div class="bar"><div class="fill" style="width:90%"></div></div>
       <div class="cap">Загальний прогрес — Етап 1 завершено, Етап 2 стартував</div>
     </div>
@@ -130,7 +132,7 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
       <div class="stage-head">
         <span class="stage-num">ЕТАП 1</span>
         <h2>Налаштування CRM</h2>
-        <span class="badge now">В роботі</span>
+        <span class="badge now">6 000 ₴ · в роботі</span>
       </div>
       <p class="desc">Фінанси, документи, знижки та склад — щоб менеджерам було зручно, а гроші рахувалися самі.</p>
       <ul class="check">
@@ -153,7 +155,7 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
       <div class="stage-head">
         <span class="stage-num">ЕТАП 2</span>
         <h2>Бот списання товару</h2>
-        <span class="badge now">В роботі</span>
+        <span class="badge now">12 000 ₴ · в роботі</span>
       </div>
       <p class="desc">Окремого документа списання в KeyCRM немає — тому робимо свій інструмент: телеграм-бот, який списує товар з причиною й коментарем і веде журнал.</p>
       <ul class="check">
@@ -168,7 +170,7 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
       <div class="stage-head">
         <span class="stage-num">ЕТАП 3</span>
         <h2>Таблиці: взаєморозрахунки та каси</h2>
-        <span class="badge wait">Попереду</span>
+        <span class="badge wait">12 000 ₴ · попереду</span>
       </div>
       <p class="desc">Google-таблиця, яка сама тягне дані з CRM: взаєморозрахунки з постачальниками та зведення по грошах у будь-який момент.</p>
       <ul class="check">
@@ -217,6 +219,12 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
         <span class="sum">6 000 ₴</span>
         <span class="st">Очікує</span>
       </div>
+      <div class="pay-row pending">
+        <span class="d">попереду</span>
+        <span class="what">Етап 3 · Таблиці взаєморозрахунків і кас</span>
+        <span class="sum">12 000 ₴</span>
+        <span class="st">Не почато</span>
+      </div>
     </section>
 
     <section class="log">
@@ -232,6 +240,10 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
       <div class="log-item">
         <span class="d">20.07</span>
         <p>Погоджено та оплачено Етап 2 — телеграм-бот списання товару. Зібрано всі вхідні: причини списання, доступ, робота зі складами.</p>
+      </div>
+      <div class="log-item">
+        <span class="d">19.07</span>
+        <p>Розібрали контроль термінів придатності. З'ясувалося, що ви вже відстежуєте їх фільтрацією, тож нічого ламати не стали. Запропонували варіант, коли нагадування приходить саме раз на тиждень, щоб не тримати це в голові.</p>
       </div>
       <div class="log-item">
         <span class="d">18.07 · 17:20</span>
