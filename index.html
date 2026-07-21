@@ -98,15 +98,15 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
     <h1>Статус проєкту:<br>налаштування <span class="gold">KeyCRM</span></h1>
     <p class="lead">Жива сторінка проєкту. Тут видно, що вже зроблено, що в роботі просто зараз і що попереду — крок за кроком, без дзвінків і звітів.</p>
     <div class="progress">
-      <span class="pct">90%</span>
-      <div class="bar"><div class="fill" style="width:90%"></div></div>
-      <div class="cap">Загальний прогрес — Етап 1 завершено, Етап 2 стартував</div>
+      <span class="pct">96%</span>
+      <div class="bar"><div class="fill" style="width:96%"></div></div>
+      <div class="cap">Загальний прогрес — Етапи 1 і 2 завершено</div>
     </div>
-    <p class="updated">Оновлено: <b>20.07.2026</b></p>
+    <p class="updated">Оновлено: <b>21.07.2026</b></p>
 
     <div class="callout">
       <div class="t">Наступний крок</div>
-      <p>Етап 2 оплачено — беремося за бота списання. По Етапу 1 лишились дрібниці: рознести витрати по касах, прибрати статус «Доставляється» коли замовлення звідти вийдуть, і розділити накладений платіж після договору з НП.</p>
+      <p>Бот списання готовий і працює. Спробуйте списати перший товар — і скажіть, чи все зручно. Далі за планом Етап 3: таблиці взаєморозрахунків і кас.</p>
     </div>
   </div>
 </header>
@@ -155,14 +155,14 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
       <div class="stage-head">
         <span class="stage-num">ЕТАП 2</span>
         <h2>Бот списання товару</h2>
-        <span class="badge now">12 000 ₴ · в роботі</span>
+        <span class="badge done">Готово</span>
       </div>
       <p class="desc">Окремого документа списання в KeyCRM немає — тому робимо свій інструмент: телеграм-бот, який списує товар з причиною й коментарем і веде журнал.</p>
       <ul class="check">
-        <li class="todo"><span class="tick">✓</span><span class="lbl">Бот: вибір товару, складу, кількості, причини та коментаря</span></li>
-        <li class="todo"><span class="tick">✓</span><span class="lbl">Автоматичне списання залишку в KeyCRM</span></li>
-        <li class="todo"><span class="tick">✓</span><span class="lbl">Журнал усіх списань — видно, скільки пішло в брак, на промо тощо</span></li>
-        <li class="todo"><span class="tick">✓</span><span class="lbl">Доступ лише для ваших співробітників, робота 24/7</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Бот: пошук товару, вибір складу, кількості, причини та коментаря</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Автоматичне списання залишку в KeyCRM + скасування помилкового списання</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Журнал усіх списань з вивантаженням у файл для Excel</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Доступ лише для ваших співробітників, робота 24/7 на сервері</span></li>
       </ul>
     </section>
 
@@ -229,6 +229,14 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
 
     <section class="log">
       <h2>Журнал проєкту</h2>
+      <div class="log-item">
+        <span class="d">21.07 · 17:40</span>
+        <p><b>Готово: бот списання товару @kmall_sklad_bot.</b> Пошук за артикулом або назвою, картка з фото товару, вибір складу, кількості та причини. Залишок у KeyCRM оновлюється одразу, все потрапляє в журнал. Помилкове списання можна скасувати однією кнопкою. Працює цілодобово на сервері.</p>
+      </div>
+      <div class="log-item">
+        <span class="d">21.07 · 13:43</span>
+        <p>За вашим проханням списання перенесено на статус «Прийнято»: тепер товар списується щойно менеджер підтвердив замовлення, а не коли його вже пакують. Сайт швидше бачить реальну кількість.</p>
+      </div>
       <div class="log-item">
         <span class="d">20.07 · 21:26</span>
         <p><b>Полагоджено:</b> на сайті зникли штрихкоди в картках товарів, що зачепило рекламу. Причина: оптимізатор сайту після оновлень «загубив» файл стилів, яким малюється штрихкод. Дані були цілі, зник лише вигляд. Почистили кеш оптимізатора — штрихкоди повернулись.</p>
