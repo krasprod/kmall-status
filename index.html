@@ -33,6 +33,19 @@ h1 .gold{color:var(--gold)}
 .progress .cap{margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-mut)}
 .progress .pct{font-family:'Buyan',var(--display);font-size:2rem;font-weight:600;color:var(--gold);line-height:1;margin-bottom:10px;display:block}
 
+/* прогрес по кожному етапу */
+.steps{margin:26px 0 0;max-width:560px;display:flex;flex-direction:column;gap:15px}
+.step .row{display:flex;align-items:baseline;gap:10px;margin-bottom:7px}
+.step .nm{font-size:.92rem;color:var(--cream-soft)}
+.step .val{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-mut);white-space:nowrap}
+.step .minibar{height:4px;border-radius:999px;background:var(--ink-2);border:1px solid var(--hair-d);overflow:hidden}
+.step .minifill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--gold-deep),var(--gold));
+  transition:width .8s cubic-bezier(.22,.61,.36,1)}
+.step.is-done .val{color:var(--gold)}
+.step.is-done .minifill{background:var(--gold)}
+.step.is-wait .minifill{background:var(--hair-d2)}
+.step.is-wait .nm{color:var(--cream-mut)}
+
 .callout{margin:34px 0 0;background:rgba(253,213,6,.07);border:1px solid rgba(253,213,6,.28);border-radius:var(--r-sm);padding:18px 22px}
 .callout .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .callout p{color:var(--cream-soft);font-size:.95rem}
@@ -101,6 +114,25 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
       <span class="pct">98%</span>
       <div class="bar"><div class="fill" style="width:98%"></div></div>
       <div class="cap">Загальний прогрес — Етапи 1 і 2 завершено, Етап 3 у роботі</div>
+    </div>
+
+    <div class="steps">
+      <div class="step is-done">
+        <div class="row"><span class="nm">Етап 1 · Налаштування CRM</span><span class="val">Завершено</span></div>
+        <div class="minibar"><div class="minifill" style="width:100%"></div></div>
+      </div>
+      <div class="step is-done">
+        <div class="row"><span class="nm">Етап 2 · Бот списання товару</span><span class="val">Завершено</span></div>
+        <div class="minibar"><div class="minifill" style="width:100%"></div></div>
+      </div>
+      <div class="step">
+        <div class="row"><span class="nm">Етап 3 · Таблиці та каси</span><span class="val">У роботі · лишився облік витрат</span></div>
+        <div class="minibar"><div class="minifill" style="width:85%"></div></div>
+      </div>
+      <div class="step is-wait">
+        <div class="row"><span class="nm">Опт і роздріб на сайті</span><span class="val">Погоджено · старт попереду</span></div>
+        <div class="minibar"><div class="minifill" style="width:10%"></div></div>
+      </div>
     </div>
     <p class="updated">Оновлено: <b>25.07.2026</b></p>
 
