@@ -35,9 +35,13 @@ h1 .gold{color:var(--gold)}
 
 /* прогрес по кожному етапу */
 .steps{margin:26px 0 0;max-width:560px;display:flex;flex-direction:column;gap:15px}
-.step .row{display:flex;align-items:baseline;gap:10px;margin-bottom:7px}
+.step .row{display:flex;align-items:baseline;gap:10px;margin-bottom:7px;flex-wrap:wrap}
 .step .nm{font-size:.92rem;color:var(--cream-soft)}
-.step .val{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-mut);white-space:nowrap}
+.step .val{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-mut)}
+@media(max-width:620px){
+  .step .val{margin-left:0;letter-spacing:.08em;font-size:9.5px}
+  .step .nm{width:100%}
+}
 .step .minibar{height:4px;border-radius:999px;background:var(--ink-2);border:1px solid var(--hair-d);overflow:hidden}
 .step .minifill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--gold-deep),var(--gold));
   transition:width .8s cubic-bezier(.22,.61,.36,1)}
@@ -45,6 +49,28 @@ h1 .gold{color:var(--gold)}
 .step.is-done .minifill{background:var(--gold)}
 .step.is-wait .minifill{background:var(--hair-d2)}
 .step.is-wait .nm{color:var(--cream-mut)}
+
+/* перемикач вкладок */
+.tabs{display:flex;gap:8px;margin:0 0 6px;flex-wrap:wrap}
+.tabbtn{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  background:transparent;color:var(--cream-mut);border:1px solid var(--hair-d);border-radius:999px;
+  padding:11px 20px;cursor:pointer;transition:.25s}
+.tabbtn:hover{color:var(--cream);border-color:var(--hair-d2)}
+.tabbtn.on{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:600}
+.tabpane{display:none}
+.tabpane.on{display:block;animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.tabs-wrap{border-bottom:1px solid var(--hair-d);padding-bottom:0;margin-bottom:38px}
+
+/* блок обовʼязків по обслуговуванню */
+.duty{border:1px solid var(--hair-d);border-radius:var(--r-sm);padding:26px 28px;margin-bottom:22px;background:var(--ink-2)}
+.duty h3{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.duty ul{list-style:none}
+.duty li{display:flex;gap:12px;padding:9px 0;font-size:.95rem;color:var(--cream-soft);border-top:1px solid var(--hair-d)}
+.duty li:first-of-type{border-top:0}
+.duty li b{color:var(--cream)}
+.duty .dot{color:var(--gold);flex:0 0 auto}
+.duty .note{margin-top:16px;font-size:.87rem;color:var(--cream-mut);line-height:1.5}
 
 .callout{margin:34px 0 0;background:rgba(253,213,6,.07);border:1px solid rgba(253,213,6,.28);border-radius:var(--r-sm);padding:18px 22px}
 .callout .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -134,17 +160,26 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
         <div class="minibar"><div class="minifill" style="width:10%"></div></div>
       </div>
     </div>
-    <p class="updated">Оновлено: <b>25.07.2026</b></p>
+    <p class="updated">Оновлено: <b>28.07.2026</b></p>
 
     <div class="callout">
       <div class="t">Наступний крок</div>
-      <p>Етапи 1 і 2 повністю закрито, дякуємо за оплату. Таблиця кас працює й оновлюється щогодини. Зараз два питання за вами: як зручніше вести витрати (щоб у таблиці зникли нулі) і старт задачі з опт/роздрібом на сайті.</p>
+      <p>З 28.07 ми ведемо й сам сайт — усе по ньому на вкладці «Обслуговування сайту». Вже прибрали зайве навантаження, через яке хостинг слав листи. Далі: лагодимо фони на головній і запускаємо опт/роздріб. За вами одне питання — як зручніше вести витрати в таблиці.</p>
     </div>
   </div>
 </header>
 
 <main>
   <div class="wrap">
+
+    <div class="tabs-wrap">
+      <div class="tabs">
+        <button class="tabbtn on" data-tab="crm">Проєкт: CRM</button>
+        <button class="tabbtn" data-tab="site">Обслуговування сайту</button>
+      </div>
+    </div>
+
+    <div class="tabpane on" id="pane-crm">
 
     <section class="stage">
       <div class="stage-head">
@@ -215,21 +250,6 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
       </ul>
     </section>
 
-    <section class="stage">
-      <div class="stage-head">
-        <span class="stage-num">ОКРЕМА ЗАДАЧА</span>
-        <h2>Опт і роздріб на сайті</h2>
-        <span class="badge now">3 000 ₴ · погоджено</span>
-      </div>
-      <p class="desc">Зараз на сайті стоять оптові ціни, тому не запустити рекламу під опт. Зробимо так, щоб роздріб бачив свою ціну, а оптовик — вашу оптову, після підтвердження менеджером.</p>
-      <ul class="check">
-        <li class="done"><span class="tick">✓</span><span class="lbl">Механіку погоджено: ціна з CRM + 30% для роздробу, автоматично</span></li>
-        <li class="todo"><span class="tick">✓</span><span class="lbl">Оптовик реєструється, ви вручну підтверджуєте — і він бачить опт</span></li>
-        <li class="todo"><span class="tick">✓</span><span class="lbl">У CRM нічого не змінюється: ведете одну ціну продажу</span></li>
-        <li class="todo"><span class="tick">✓</span><span class="lbl">Покажемо, як вмикати оптовику доступ — це пара кліків</span></li>
-      </ul>
-    </section>
-
     <section class="safe">
       <h2>Що лишається <span class="gold">недоторканим</span></h2>
       <p>Усе, що у вас уже працює і коштувало часу та грошей, ми не чіпаємо. Налаштовуємо поруч і зверху — не поверх.</p>
@@ -272,12 +292,6 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
         <span class="d">в роботі</span>
         <span class="what">Етап 3 · Таблиці взаєморозрахунків і кас</span>
         <span class="sum">12 000 ₴</span>
-        <span class="st">Очікує</span>
-      </div>
-      <div class="pay-row pending">
-        <span class="d">погоджено</span>
-        <span class="what">Опт / роздріб на сайті — окрема задача <span style="color:var(--gold-deep)">(зі знижкою з 5 000 ₴)</span></span>
-        <span class="sum">3 000 ₴</span>
         <span class="st">Очікує</span>
       </div>
     </section>
@@ -378,8 +392,100 @@ footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold
       </div>
     </section>
 
+    </div><!-- /pane-crm -->
+
+    <!-- ══════════ ВКЛАДКА: ОБСЛУГОВУВАННЯ САЙТУ ══════════ -->
+    <div class="tabpane" id="pane-site">
+
+      <div class="duty">
+        <h3>Що входить в обслуговування · 250 $ на місяць</h3>
+        <ul>
+          <li><span class="dot">●</span><span><b>Оновлення та безпека.</b> Оновлюємо WordPress, тему й плагіни, стежимо за сумісністю, перевіряємо сайт на вразливості та стороннній код.</span></li>
+          <li><span class="dot">●</span><span><b>Швидкість і навантаження.</b> Кеш, чистка бази, контроль ліміту ресурсів хостингу — щоб сайт не падав і не приходили листи про перевищення.</span></li>
+          <li><span class="dot">●</span><span><b>Резервні копії.</b> Стежимо, щоб копії створювались, і зберігаємо свою окрему копію на випадок відкату.</span></li>
+          <li><span class="dot">●</span><span><b>Дрібні правки на запит.</b> Поправити текст, банер, блок, вкладку — у межах місячної оплати.</span></li>
+          <li><span class="dot">●</span><span><b>Технічні поломки.</b> Щось відвалилось або відображається не так — розбираємось і лагодимо.</span></li>
+          <li><span class="dot">●</span><span><b>Звʼязка сайту з KeyCRM.</b> Стежимо, щоб синхронізація товарів, цін і залишків працювала.</span></li>
+        </ul>
+        <p class="note">Окремо оплачуються тільки великі роботи: нові розділи, нова функціональність, окремі продукти. Про такі домовляємось заздалегідь і озвучуємо ціну до старту.</p>
+      </div>
+
+      <section class="stage">
+        <div class="stage-head">
+          <span class="stage-num">ОКРЕМА ЗАДАЧА</span>
+          <h2>Опт і роздріб на сайті</h2>
+          <span class="badge now">3 000 ₴ · погоджено</span>
+        </div>
+        <p class="desc">Зараз на сайті стоять оптові ціни, тому не запустити рекламу під опт. Зробимо так, щоб роздріб бачив свою ціну, а оптовик — вашу оптову, після підтвердження менеджером.</p>
+        <ul class="check">
+          <li class="done"><span class="tick">✓</span><span class="lbl">Механіку погоджено: ціна з CRM + 30% для роздробу, автоматично</span></li>
+          <li class="now"><span class="tick">✓</span><span class="lbl">Рішення підготовлено, чекає встановлення на сайт</span></li>
+          <li class="todo"><span class="tick">✓</span><span class="lbl">Оптовик реєструється, ви вручну підтверджуєте — і він бачить опт</span></li>
+          <li class="todo"><span class="tick">✓</span><span class="lbl">У CRM нічого не змінюється: ведете одну ціну продажу</span></li>
+          <li class="todo"><span class="tick">✓</span><span class="lbl">Покажемо, як вмикати оптовику доступ — це пара кліків</span></li>
+        </ul>
+      </section>
+
+      <section class="pay">
+        <h2>Оплати за сайтом</h2>
+        <p class="sub">Щомісячне обслуговування та окремі задачі по сайту.</p>
+        <div class="pay-row pending">
+          <span class="d">з 28.07.2026</span>
+          <span class="what">Обслуговування сайту — щомісяця</span>
+          <span class="sum">250 $</span>
+          <span class="st">Діє</span>
+        </div>
+        <div class="pay-row pending">
+          <span class="d">погоджено</span>
+          <span class="what">Опт / роздріб <span style="color:var(--gold-deep)">(зі знижкою з 5 000 ₴)</span></span>
+          <span class="sum">3 000 ₴</span>
+          <span class="st">Очікує</span>
+        </div>
+      </section>
+
+      <section class="log">
+        <h2>Журнал робіт по сайту</h2>
+        <div class="log-item">
+          <span class="d">28.07 · вечір</span>
+          <p><b>Закрито зайве навантаження від пошукових роботів.</b> У файл robots.txt додали заборону для 12 сканерів (Ahrefs, Semrush та подібні) — вони обходять весь сайт, вантажать сервер, але покупців не приводять. Також закрили від обходу службові сторінки кошика й кабінету. Google і покупці працюють як раніше.</p>
+        </div>
+        <div class="log-item">
+          <span class="d">28.07 · день</span>
+          <p><b>Прибрали з індексації 565 сторінок штрихкодів.</b> Вони створювались автоматично і кожна вантажила сервер понад секунду, а Google обходив їх по колу. Самі сторінки лишились робочими: ваш пошук по штрихкоду працює як раніше, поле GTIN і картинка штрихкода не змінились, реклама Google не зачеплена.</p>
+        </div>
+        <div class="log-item">
+          <span class="d">28.07 · день</span>
+          <p><b>Знайшли причину листів від хостингу.</b> Це не місце і не памʼять, а ліміт процесорного часу: 100 хвилин на добу за тарифом, витрачалось 164. Розібрали, на що саме йде ресурс, і почали прибирати зайве.</p>
+        </div>
+        <div class="log-item">
+          <span class="d">28.07 · ранок</span>
+          <p><b>Повна перевірка сайту після робіт попередніх підрядників.</b> Звірили плагіни, версії, налаштування. Знайшли, що на головній зникли фонові зображення (близько 60 блоків) — це сталось 27.07 після оновлення Elementor. Зображення в медіатеці цілі, справа в налаштуваннях. Готуємось полагодити.</p>
+        </div>
+        <div class="log-item">
+          <span class="d">28.07</span>
+          <p>Обслуговування сайту перейшло до нас. Зробили свою резервну копію сайту, зафіксували повний перелік плагінів і налаштувань, щоб було з чим звіряти надалі.</p>
+        </div>
+      </section>
+
+    </div><!-- /pane-site -->
+
   </div>
 </main>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('.tabbtn');
+  function show(name){
+    document.querySelectorAll('.tabpane').forEach(function(p){p.classList.toggle('on', p.id==='pane-'+name)});
+    btns.forEach(function(b){b.classList.toggle('on', b.dataset.tab===name)});
+    try{ history.replaceState(null,'','#'+name); }catch(e){}
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  btns.forEach(function(b){ b.addEventListener('click',function(){ show(b.dataset.tab); }); });
+  var h=(location.hash||'').replace('#','');
+  if(h==='site') show('site');
+})();
+</script>
 
 <footer>
   <div class="wrap" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;width:100%">
