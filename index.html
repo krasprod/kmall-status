@@ -143,8 +143,8 @@ footer a{color:var(--green-d);text-decoration:none}
     <div class="logo">KMALL<small>статус проєкту</small></div>
     <p class="lead">Жива сторінка проєкту. Тут видно, що вже зроблено, що в роботі просто зараз і що попереду — крок за кроком, без дзвінків і звітів.</p>
     <div class="progress">
-      <span class="pct">86%</span>
-      <div class="bar"><div class="fill" style="width:86%"></div></div>
+      <span class="pct">96%</span>
+      <div class="bar"><div class="fill" style="width:96%"></div></div>
       <div class="cap">Загальний прогрес по всіх етапах</div>
     </div>
 
@@ -161,12 +161,12 @@ footer a{color:var(--green-d);text-decoration:none}
         <div class="row"><span class="nm">Етап 3 · Таблиці та каси</span><span class="val">У роботі · лишився облік витрат</span></div>
         <div class="minibar"><div class="minifill" style="width:85%"></div></div>
       </div>
-      <div class="step is-wait">
-        <div class="row"><span class="nm">Опт і роздріб на сайті</span><span class="val">Погоджено · старт попереду</span></div>
-        <div class="minibar"><div class="minifill" style="width:10%"></div></div>
+      <div class="step is-done">
+        <div class="row"><span class="nm">Опт і роздріб на сайті</span><span class="val">Завершено</span></div>
+        <div class="minibar"><div class="minifill" style="width:100%"></div></div>
       </div>
     </div>
-    <p class="updated">Оновлено: <b>28.07.2026</b></p>
+    <p class="updated">Оновлено: <b>29.07.2026</b></p>
 
     <div class="callout">
       <div class="t">Наступний крок</div>
@@ -260,15 +260,15 @@ footer a{color:var(--green-d);text-decoration:none}
       <div class="stage-head">
         <span class="stage-num">ОКРЕМА ЗАДАЧА</span>
         <h2>Опт і роздріб на сайті</h2>
-        <span class="badge now">3 000 ₴ · погоджено</span>
+        <span class="badge done">3 000 ₴ · увімкнено</span>
       </div>
-      <p class="desc">Зараз на сайті стоять оптові ціни, тому не запустити рекламу під опт. Зробимо так, щоб роздріб бачив свою ціну, а оптовик — вашу оптову, після підтвердження менеджером.</p>
+      <p class="desc">Раніше на сайті стояли оптові ціни, через це не виходило вести рекламу під роздріб. Тепер роздріб бачить свою ціну, а оптовик вашу оптову. Ціни в CRM лишаються незмінними, роздрібна рахується поверх автоматично.</p>
       <ul class="check">
-        <li class="done"><span class="tick">✓</span><span class="lbl">Механіку погоджено: ціна з CRM + 30% для роздробу, автоматично</span></li>
-        <li class="now"><span class="tick">✓</span><span class="lbl">Рішення підготовлено, чекає встановлення на сайт</span></li>
-        <li class="todo"><span class="tick">✓</span><span class="lbl">Оптовик реєструється, ви вручну підтверджуєте — і він бачить опт</span></li>
-        <li class="todo"><span class="tick">✓</span><span class="lbl">У CRM нічого не змінюється: ведете одну ціну продажу</span></li>
-        <li class="todo"><span class="tick">✓</span><span class="lbl">Покажемо, як вмикати оптовику доступ — це пара кліків</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Увімкнено в ніч на 29.07, у тихий час, як домовлялись</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Націнка своя для кожного бренду: вісім брендів без націнки, Medi-Peel +15%, решта +20%</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Ціни звірено одразу після вмикання по 12 брендах, розбіжностей немає</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">У CRM нічого не змінюється: ведете одну ціну продажу</span></li>
+        <li class="now"><span class="tick">✓</span><span class="lbl">Оптовик реєструється, ви підтверджуєте, і він бачить опт. Покажемо, як вмикати, це пара кліків</span></li>
       </ul>
     </section>
 
@@ -462,6 +462,10 @@ footer a{color:var(--green-d);text-decoration:none}
 
       <section class="log">
         <h2>Журнал робіт по сайту</h2>
+        <div class="log-item">
+          <span class="d">29.07 · ніч</span>
+          <p><b>Увімкнули опт і роздріб.</b> Зробили в тихий час, як домовлялись. Націнку налаштували під ваш список: вісім брендів без націнки, Medi-Peel плюс 15, решта плюс 20. Одразу після вмикання звірили ціни по дванадцяти брендах, розбіжностей немає. Ціни в CRM не змінювались, роздрібна рахується поверх автоматично.</p>
+        </div>
         <div class="log-item">
           <span class="d">28.07 · вечір</span>
           <p><b>Полагодили фон на головній сторінці.</b> Перший екран відкривався сірим, банер зʼявлявся тільки після прокрутки. Причина була в налаштуванні Elementor «відкладене завантаження фонових зображень»: воно притримує картинки в блоках, що йдуть далі по сторінці, а головний банер за структурою сайту опинився саме серед них. Вимкнули це налаштування, почистили кеш. Перевірили очима звичайного відвідувача: фон видно одразу, швидкість сторінки не змінилась.</p>
