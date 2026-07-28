@@ -4,143 +4,137 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>KMALL — статус проєкту</title>
+<title>KMALL × KRASPROD — статус проєкту</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cormorant+Garamond:wght@600&display=swap&subset=cyrillic,latin" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap&subset=cyrillic,latin" rel="stylesheet">
 <style>
+@font-face{font-family:'Buyan';src:url('buyan-bold.ttf') format('truetype');font-weight:600 700;font-display:swap}
 :root{
-  --green:#45976c; --green-d:#2b7e52; --green-t:#e9f3ee; --green-l:#8ed1a8;
-  --ink:#1d1f1e; --grey:#7a827d; --grey-l:#9aa29c; --line:#e7eae8;
-  --bg:#ffffff; --soft:#f6f8f7;
-  --red:#cf2e2e; --red-t:#fdeeee;
-  --amber:#b8860b; --amber-t:#fdf6e0;
-  --r:18px; --r-sm:12px; --maxw:940px; --pad:clamp(18px,5vw,48px);
-  --sans:'Montserrat',-apple-system,system-ui,sans-serif;
-  --serif:'Cormorant Garamond',Georgia,serif;
+  --ink:#0b0c0e; --ink-2:#16181c; --cream:#f4efe7; --cream-soft:#cabfb1; --cream-mut:#a99e90;
+  --gold:#fdd506; --gold-deep:#e6be00; --hair-d:rgba(244,239,231,.14); --hair-d2:rgba(244,239,231,.24);
+  --r:26px; --r-sm:14px; --maxw:960px; --pad:clamp(20px,5vw,64px);
+  --sans:'Inter',-apple-system,system-ui,sans-serif; --display:'Inter Tight',var(--sans); --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+header{padding:clamp(48px,7vw,90px) 0 clamp(28px,4vw,44px)}
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);border:1px solid var(--hair-d2);border-radius:8px;padding:8px 14px;margin-bottom:22px}
+h1{font-family:'Buyan',var(--display);font-weight:600;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.04;letter-spacing:-.01em}
+h1 .gold{color:var(--gold)}
+.lead{margin-top:16px;max-width:560px;color:var(--cream-soft);font-size:clamp(1rem,1.2vw,1.1rem);line-height:1.55}
+.updated{margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-mut)}
+.updated b{color:var(--gold);font-weight:500}
 
-/* ── шапка ── */
-header{border-bottom:1px solid var(--line);padding:clamp(34px,5vw,54px) 0 0;text-align:center}
-.logo{font-family:var(--serif);font-size:clamp(26px,4vw,34px);letter-spacing:.42em;font-weight:600;text-indent:.42em;color:var(--ink)}
-.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.34em;color:var(--grey);margin-top:6px;text-transform:uppercase;text-indent:0}
-.lead{margin:20px auto 0;max-width:540px;color:var(--grey);font-size:.95rem}
-.updated{margin-top:16px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-l)}
-.updated b{color:var(--green-d);font-weight:600}
+.progress{margin:26px 0 0;max-width:560px}
+.progress .bar{height:6px;border-radius:999px;background:var(--ink-2);border:1px solid var(--hair-d);overflow:hidden}
+.progress .fill{height:100%;width:14%;background:linear-gradient(90deg,var(--gold-deep),var(--gold));border-radius:999px;transition:width .6s cubic-bezier(.22,.61,.36,1)}
+.progress .cap{margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-mut)}
+.progress .pct{font-family:'Buyan',var(--display);font-size:2rem;font-weight:600;color:var(--gold);line-height:1;margin-bottom:10px;display:block}
 
-/* ── прогрес ── */
-.progress{margin:30px auto 0;max-width:520px;text-align:left}
-.progress .pct{display:block;font-size:2.1rem;font-weight:700;color:var(--green-d);line-height:1;margin-bottom:10px;letter-spacing:-.02em}
-.progress .bar{height:6px;border-radius:999px;background:var(--soft);border:1px solid var(--line);overflow:hidden}
-.progress .fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green-l));border-radius:999px;transition:width .8s cubic-bezier(.22,.61,.36,1)}
-.progress .cap{margin-top:9px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-l)}
+/* прогрес по кожному етапу */
+.steps{margin:26px 0 0;max-width:560px;display:flex;flex-direction:column;gap:15px}
+.step .row{display:flex;align-items:baseline;gap:10px;margin-bottom:7px;flex-wrap:wrap}
+.step .nm{font-size:.92rem;color:var(--cream-soft)}
+.step .val{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-mut)}
+@media(max-width:620px){
+  .step .val{margin-left:0;letter-spacing:.08em;font-size:9.5px}
+  .step .nm{width:100%}
+}
+.step .minibar{height:4px;border-radius:999px;background:var(--ink-2);border:1px solid var(--hair-d);overflow:hidden}
+.step .minifill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--gold-deep),var(--gold));
+  transition:width .8s cubic-bezier(.22,.61,.36,1)}
+.step.is-done .val{color:var(--gold)}
+.step.is-done .minifill{background:var(--gold)}
+.step.is-wait .minifill{background:var(--hair-d2)}
+.step.is-wait .nm{color:var(--cream-mut)}
 
-.steps{margin:24px auto 0;max-width:520px;display:flex;flex-direction:column;gap:14px;text-align:left}
-.step .row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;flex-wrap:wrap}
-.step .nm{font-size:.9rem;color:var(--ink)}
-.step .val{margin-left:auto;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-l)}
-.step .minibar{height:4px;border-radius:999px;background:var(--soft);border:1px solid var(--line);overflow:hidden}
-.step .minifill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--green),var(--green-l));transition:width .8s cubic-bezier(.22,.61,.36,1)}
-.step.is-done .val{color:var(--green-d);font-weight:600}
-.step.is-done .minifill{background:var(--green)}
-.step.is-wait .minifill{background:var(--line)}
-.step.is-wait .nm{color:var(--grey-l)}
-@media(max-width:620px){.step .val{margin-left:0}.step .nm{width:100%}}
-
-/* ── вкладки ── */
-.tabs-wrap{margin-top:30px}
-.tabs{display:flex;justify-content:center;gap:4px;flex-wrap:wrap}
-.tabbtn{font-family:inherit;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;background:none;
-  color:var(--grey);border:none;border-bottom:2px solid transparent;padding:14px 20px;cursor:pointer;transition:.2s}
-.tabbtn:hover{color:var(--ink)}
-.tabbtn.on{color:var(--green-d);border-bottom-color:var(--green);font-weight:600}
+/* перемикач вкладок */
+.tabs{display:flex;gap:8px;margin:0 0 6px;flex-wrap:wrap}
+.tabbtn{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  background:transparent;color:var(--cream-mut);border:1px solid var(--hair-d);border-radius:999px;
+  padding:11px 20px;cursor:pointer;transition:.25s}
+.tabbtn:hover{color:var(--cream);border-color:var(--hair-d2)}
+.tabbtn.on{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:600}
 .tabpane{display:none}
-.tabpane.on{display:block;animation:fade .35s ease}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.tabpane.on{display:block;animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.tabs-wrap{border-bottom:1px solid var(--hair-d);padding-bottom:0;margin-bottom:38px}
 
-/* ── картка етапу ── */
-main{padding:clamp(28px,4vw,44px) 0 clamp(50px,7vw,90px)}
-.stage{border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,30px);margin-bottom:18px;transition:.2s}
-.stage:hover{box-shadow:0 4px 22px rgba(29,31,30,.05)}
-.stage-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-.stage-num{font-size:10px;letter-spacing:.16em;color:var(--grey-l);text-transform:uppercase}
-.stage h2{font-size:clamp(1.1rem,1.7vw,1.35rem);font-weight:600;letter-spacing:-.01em}
-.badge{font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;border-radius:999px;padding:6px 13px;margin-left:auto;white-space:nowrap}
-.badge.done{background:var(--green);color:#fff}
-.badge.now{background:var(--green-t);color:var(--green-d)}
-.badge.wait{background:var(--soft);color:var(--grey)}
-.stage .desc{color:var(--grey);font-size:.9rem;margin-bottom:16px;max-width:640px}
-ul.check{list-style:none}
-ul.check li{display:flex;gap:13px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--line);font-size:.93rem;color:var(--ink)}
-ul.check li:first-child{border-top:0}
-.tick{flex:0 0 20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px}
-li.done .tick{background:var(--green);color:#fff;font-weight:700}
-li.now .tick{border:1.5px solid var(--green);color:var(--green)}
-li.now .lbl::after{content:"— в роботі";font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green-d);margin-left:9px;font-weight:600}
-li.todo .tick{border:1.5px solid var(--line);color:transparent}
-li.todo{color:var(--grey)}
-
-/* ── недоторкане ── */
-.safe{background:var(--soft);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,30px);margin-bottom:18px}
-.safe h2{font-size:clamp(1.05rem,1.6vw,1.25rem);font-weight:600;margin-bottom:6px}
-.safe h2 .gold{color:var(--green-d)}
-.safe p{color:var(--grey);font-size:.9rem;max-width:640px;margin-bottom:14px}
-.safe ul{list-style:none}
-.safe li{display:flex;gap:11px;padding:8px 0;color:var(--ink);font-size:.9rem;border-top:1px solid var(--line)}
-.safe li:first-child{border-top:0}
-.safe .lock{color:var(--green);flex:0 0 14px}
-
-/* ── обовʼязки ── */
-.duty{border:1px solid var(--line);border-left:3px solid var(--green);border-radius:var(--r-sm);padding:24px 26px;margin-bottom:18px;background:var(--soft)}
-.duty h3{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--green-d);margin-bottom:14px;font-weight:700}
+/* блок обовʼязків по обслуговуванню */
+.duty{border:1px solid var(--hair-d);border-radius:var(--r-sm);padding:26px 28px;margin-bottom:22px;background:var(--ink-2)}
+.duty h3{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
 .duty ul{list-style:none}
-.duty li{display:flex;gap:11px;padding:9px 0;font-size:.92rem;color:var(--ink);border-top:1px solid var(--line)}
+.duty li{display:flex;gap:12px;padding:9px 0;font-size:.95rem;color:var(--cream-soft);border-top:1px solid var(--hair-d)}
 .duty li:first-of-type{border-top:0}
-.duty li b{font-weight:600}
-.duty .dot{color:var(--green);flex:0 0 auto}
-.duty .note{margin-top:14px;font-size:.85rem;color:var(--grey);line-height:1.5}
+.duty li b{color:var(--cream)}
+.duty .dot{color:var(--gold);flex:0 0 auto}
+.duty .note{margin-top:16px;font-size:.87rem;color:var(--cream-mut);line-height:1.5}
 
-/* ── оплати ── */
-.pay{border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,30px);margin-bottom:18px}
-.pay h2{font-size:clamp(1.05rem,1.6vw,1.25rem);font-weight:600;margin-bottom:4px}
-.pay .sub{color:var(--grey);font-size:.87rem;margin-bottom:12px}
-.pay-row{display:grid;grid-template-columns:120px 1fr auto auto;gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
-.pay-row .d{font-size:10.5px;letter-spacing:.08em;color:var(--grey-l);text-transform:uppercase}
-.pay-row .what{font-size:.92rem}
-.pay-row .sum{font-weight:700;font-size:1rem;white-space:nowrap}
-.pay-row .st{font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;background:var(--green);color:#fff;border-radius:999px;padding:6px 12px}
-.pay-row.pending .st{background:var(--soft);color:var(--grey);border:1px solid var(--line)}
-.pay-row.pending .sum,.pay-row.pending .what{color:var(--grey)}
-@media(max-width:600px){.pay-row{grid-template-columns:1fr auto;gap:5px 12px}.pay-row .d{grid-column:1/-1}}
+.callout{margin:34px 0 0;background:rgba(253,213,6,.07);border:1px solid rgba(253,213,6,.28);border-radius:var(--r-sm);padding:18px 22px}
+.callout .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.callout p{color:var(--cream-soft);font-size:.95rem}
+.callout p b{color:var(--cream);font-weight:600}
 
-/* ── журнал ── */
-.log{border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,30px)}
-.log h2{font-size:clamp(1.05rem,1.6vw,1.25rem);font-weight:600;margin-bottom:14px}
-.log-item{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:15px 0;border-top:1px solid var(--line)}
-.log-item:first-of-type{border-top:0}
-.log-item .d{font-size:10.5px;letter-spacing:.08em;color:var(--green-d);text-transform:uppercase;font-weight:600;padding-top:2px}
-.log-item p{color:var(--ink);font-size:.92rem;line-height:1.6}
-.log-item p b{font-weight:600}
+main{padding:clamp(24px,4vw,48px) 0 clamp(64px,8vw,110px)}
+.stage{background:rgba(12,11,10,.5);border:1px solid var(--hair-d);border-radius:var(--r);padding:clamp(22px,3.4vw,36px);margin-bottom:26px;backdrop-filter:blur(18px)}
+.stage-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.stage-num{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--cream-mut)}
+.stage h2{font-family:'Buyan',var(--display);font-weight:600;font-size:clamp(1.25rem,1.9vw,1.6rem);letter-spacing:-.01em}
+.badge{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:6px 12px;margin-left:auto}
+.badge.done{background:var(--gold);color:var(--ink)}
+.badge.now{background:transparent;color:var(--gold);border:1px solid rgba(253,213,6,.5)}
+.badge.wait{background:transparent;color:var(--cream-mut);border:1px solid var(--hair-d)}
+.stage .desc{color:var(--cream-mut);font-size:.92rem;margin-bottom:18px;max-width:640px}
+ul.check{list-style:none}
+ul.check li{display:flex;gap:14px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--hair-d);font-size:.97rem;color:var(--cream-soft)}
+ul.check li:first-child{border-top:0}
+.tick{flex:0 0 22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px}
+li.done .tick{background:var(--gold);color:var(--ink);font-weight:700}
+li.done{color:var(--cream)}
+li.now .tick{border:1.5px solid var(--gold);color:var(--gold)}
+li.now{color:var(--cream)}
+li.now .lbl::after{content:"— в роботі";font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-left:10px}
+li.todo .tick{border:1.5px solid var(--hair-d2);color:transparent}
+
+.safe{border:1px solid var(--hair-d);border-radius:var(--r);padding:clamp(22px,3.4vw,36px);margin-bottom:26px}
+.safe h2{font-family:'Buyan',var(--display);font-weight:600;font-size:clamp(1.15rem,1.7vw,1.45rem);margin-bottom:6px}
+.safe h2 .gold{color:var(--gold)}
+.safe p{color:var(--cream-mut);font-size:.92rem;max-width:640px;margin-bottom:16px}
+.safe ul{list-style:none}
+.safe li{display:flex;gap:12px;padding:9px 0;color:var(--cream-soft);font-size:.95rem;border-top:1px solid var(--hair-d)}
+.safe li:first-child{border-top:0}
+.safe .lock{color:var(--gold-deep);flex:0 0 18px}
+
+.pay{border:1px solid var(--hair-d);border-radius:var(--r);padding:clamp(22px,3.4vw,36px);margin-bottom:26px}
+.pay h2{font-family:'Buyan',var(--display);font-weight:600;font-size:clamp(1.15rem,1.7vw,1.45rem);margin-bottom:4px}
+.pay .sub{color:var(--cream-mut);font-size:.9rem;margin-bottom:18px}
+.pay-row{display:grid;grid-template-columns:130px 1fr auto auto;gap:18px;align-items:center;padding:15px 0;border-top:1px solid var(--hair-d)}
+.pay-row .d{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--gold-deep)}
+.pay-row .what{color:var(--cream);font-size:.97rem}
+.pay-row .sum{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--cream);white-space:nowrap}
+.pay-row .st{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--ink);border-radius:999px;padding:6px 12px}
+.pay-row.pending .st{background:transparent;color:var(--cream-mut);border:1px solid var(--hair-d)}
+.pay-row.pending .sum,.pay-row.pending .what{color:var(--cream-mut)}
+@media(max-width:600px){.pay-row{grid-template-columns:1fr auto;gap:6px 14px}.pay-row .d{grid-column:1/-1}}
+.log h2{font-family:'Buyan',var(--display);font-weight:600;font-size:clamp(1.15rem,1.7vw,1.45rem);margin-bottom:18px}
+.log-item{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:14px 0;border-top:1px solid var(--hair-d)}
+.log-item .d{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--gold-deep);padding-top:3px}
+.log-item p{color:var(--cream-soft);font-size:.95rem}
 @media(max-width:560px){.log-item{grid-template-columns:1fr;gap:4px}}
 
-/* ── наступний крок ── */
-.callout{margin:26px auto 0;max-width:620px;background:var(--green-t);border:1px solid rgba(69,151,108,.25);border-radius:var(--r-sm);padding:18px 22px;text-align:left}
-.callout .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--green-d);margin-bottom:7px;font-weight:700}
-.callout p{color:var(--ink);font-size:.92rem;line-height:1.6}
-.callout p b{font-weight:600}
-
-footer{border-top:1px solid var(--line);padding:22px 0 34px;text-align:center;font-size:10.5px;color:var(--grey-l);letter-spacing:.06em}
-footer a{color:var(--green-d);text-decoration:none}
+footer{border-top:1px solid var(--hair-d);padding:26px 0 46px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+footer .who{font-family:var(--display);font-weight:600}
+footer .tg{margin-left:auto;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--cream-mut);text-decoration:none;border:1px solid var(--hair-d2);border-radius:999px;padding:9px 18px;transition:.2s}
+footer .tg:hover{color:var(--ink);background:var(--gold);border-color:var(--gold)}
 </style>
-
 </head>
 <body>
 <header>
   <div class="wrap">
-    <div class="logo">KMALL<small>статус проєкту</small></div>
+    <span class="eyebrow">KMALL COSMETICS × KRASPROD</span>
+    <h1>Статус проєкту:<br>налаштування <span class="gold">KeyCRM</span></h1>
     <p class="lead">Жива сторінка проєкту. Тут видно, що вже зроблено, що в роботі просто зараз і що попереду — крок за кроком, без дзвінків і звітів.</p>
     <div class="progress">
       <span class="pct">86%</span>
@@ -324,7 +318,7 @@ footer a{color:var(--green-d);text-decoration:none}
       </div>
       <div class="pay-row pending">
         <span class="d">погоджено</span>
-        <span class="what">Опт / роздріб на сайті <span style="color:var(--green-d)">(зі знижкою з 5 000 ₴)</span></span>
+        <span class="what">Опт / роздріб на сайті <span style="color:var(--gold-deep)">(зі знижкою з 5 000 ₴)</span></span>
         <span class="sum">3 000 ₴</span>
         <span class="st">Очікує</span>
       </div>
@@ -505,7 +499,10 @@ footer a{color:var(--green-d);text-decoration:none}
 </script>
 
 <footer>
-  <div class="wrap">KMALL × krasprod · сторінка оновлюється в міру робіт</div>
+  <div class="wrap" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;width:100%">
+    <span class="who">Андрій Красик</span>
+    <a class="tg" href="https://t.me/krasprod">Telegram — @krasprod</a>
+  </div>
 </footer>
 </body>
 </html>
