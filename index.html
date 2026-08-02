@@ -82,6 +82,8 @@ li.now .tick{border:1.5px solid var(--green);color:var(--green)}
 li.now .lbl::after{content:"— в роботі";font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green-d);margin-left:9px;font-weight:600}
 li.todo .tick{border:1.5px solid var(--line);color:transparent}
 li.todo{color:var(--grey)}
+li.you .tick{border:1.5px solid #d9a520;color:#9a6b00;font-weight:700}
+li.you .lbl::after{content:"— за вами";font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a6b00;margin-left:9px;font-weight:700;white-space:nowrap}
 
 /* ── недоторкане ── */
 .safe{background:var(--soft);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,30px);margin-bottom:18px}
@@ -114,6 +116,22 @@ li.todo{color:var(--grey)}
   border:1px solid var(--line);border-left:3px solid var(--green);border-radius:var(--r-sm);
   padding:14px 18px;background:var(--soft);transition:.18s}
 .rcard:hover{background:#fff;box-shadow:0 4px 18px rgba(29,31,30,.07);transform:translateY(-1px)}
+.docs{border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,30px);margin-bottom:18px}
+.docs h2{font-size:clamp(1.05rem,1.6vw,1.25rem);font-weight:600;margin-bottom:4px}
+.docs .rsub{color:var(--grey);font-size:.87rem;margin-bottom:16px;max-width:640px}
+.dcard{display:grid;grid-template-columns:44px 1fr auto;grid-template-areas:"i t o" "i m o";
+  gap:2px 16px;align-items:center;border:1px solid var(--line);border-radius:12px;
+  padding:16px 20px;margin-bottom:10px;text-decoration:none;color:inherit;
+  transition:background .18s,box-shadow .18s,transform .18s}
+.dcard:last-child{margin-bottom:0}
+.dcard:hover{background:#fff;box-shadow:0 4px 18px rgba(29,31,30,.07);transform:translateY(-1px)}
+.dicon{grid-area:i;width:36px;height:44px;border:1.5px solid var(--green);border-radius:5px;
+  display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;
+  letter-spacing:.06em;color:var(--green-d)}
+.dtitle{grid-area:t;font-weight:600;font-size:.98rem}
+.dmeta{grid-area:m;color:var(--grey);font-size:.82rem}
+.dopen{grid-area:o;color:var(--green-d);font-weight:600;font-size:.87rem;white-space:nowrap}
+@media(max-width:560px){.dcard{grid-template-columns:1fr;grid-template-areas:"i" "t" "m" "o";gap:6px;padding:14px 16px}}
 .rdate{grid-area:d;font-size:11px;letter-spacing:.06em;color:var(--green-d);font-weight:700}
 .rtitle{grid-area:t;font-size:.95rem;font-weight:600}
 .rmeta{grid-area:m;font-size:.8rem;color:var(--grey)}
@@ -170,7 +188,7 @@ footer a{color:var(--green-d);text-decoration:none}
 
     <div class="steps">
       <div class="step is-done">
-        <div class="row"><span class="nm">Етап 1 · Налаштування CRM</span><span class="val">Завершено</span></div>
+        <div class="row"><span class="nm">Етап 1 · Налаштування CRM</span><span class="val">Завершено · інструкція готова</span></div>
         <div class="minibar"><div class="minifill" style="width:100%"></div></div>
       </div>
       <div class="step is-done">
@@ -178,7 +196,7 @@ footer a{color:var(--green-d);text-decoration:none}
         <div class="minibar"><div class="minifill" style="width:100%"></div></div>
       </div>
       <div class="step">
-        <div class="row"><span class="nm">Етап 3 · Таблиці та каси</span><span class="val">У роботі · лишився облік витрат</span></div>
+        <div class="row"><span class="nm">Етап 3 · Таблиці та каси</span><span class="val">Майже готово · за вами вибір</span></div>
         <div class="minibar"><div class="minifill" style="width:92%"></div></div>
       </div>
       <div class="step is-done">
@@ -186,11 +204,11 @@ footer a{color:var(--green-d);text-decoration:none}
         <div class="minibar"><div class="minifill" style="width:100%"></div></div>
       </div>
     </div>
-    <p class="updated">Оновлено: <b>02.08.2026</b></p>
+    <p class="updated">Оновлено: <b>03.08.2026</b></p>
 
     <div class="callout">
       <div class="t">Наступний крок</div>
-      <p>Сайт на бізнес-тарифі хостингу, добового ліміту ресурсів більше немає. Опт і роздріб працює, оптовиків уже заведено дев'ятеро. Сьогодні провели планову перевірку — звіт нижче, на вкладці «Обслуговування сайту». За вами одне питання: як зручніше вести витрати в таблиці.</p>
+      <p>Перший етап закритий повністю: залишки звірені по всіх 1006 товарах, склади й статуси доналаштовані, готова інструкція «Як влаштована ваша CRM» — вона нижче, її можна завантажити. За вами лишилось два кроки: обрати спосіб обліку витрат і знайти час пройтись по інструкції разом.</p>
     </div>
   </div>
 </header>
@@ -229,18 +247,21 @@ footer a{color:var(--green-d);text-decoration:none}
       </div>
       <p class="desc">Фінанси, документи, знижки та склад — щоб менеджерам було зручно, а гроші рахувалися самі.</p>
       <ul class="check">
-        <li class="now"><span class="tick">✓</span><span class="lbl">Фінанси: рахунки ФОП і готівкова каса створені, оплати прив'язані. Зайві типи витрат приховано</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Фінанси: рахунки ФОП і готівкова каса створені, оплати прив'язані. Зайві типи витрат приховано</span></li>
+        <li class="you"><span class="tick">?</span><span class="lbl">Привʼязка витрат до кас: у вас оплата постачальнику буває і з безготівки, і готівкою. Скажіть, як зручніше, і ми привʼяжемо</span></li>
         <li class="done"><span class="tick">✓</span><span class="lbl">Друк рахунку покупцю — фірмова форма KMALL готова, друкується з картки замовлення</span></li>
         <li class="done"><span class="tick">✓</span><span class="lbl">Друк інвентаризації — акт зі звіркою «за обліком / фактично / різниця»</span></li>
         <li class="done"><span class="tick">✓</span><span class="lbl">Рівні знижок: від 3000 грн — 3%, від 5000 грн — 5%</span></li>
         <li class="done"><span class="tick">✓</span><span class="lbl">Постачальники: розділ працює, показати як заводити і привʼязувати до замовлень</span></li>
-        <li class="now"><span class="tick">✓</span><span class="lbl">Статуси: зайві приховано (12 шт). Лишилось прибрати «Доставляється», коли замовлення звідти вийдуть</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Статуси: зайві приховано, «Доставляється» теж прибрано. В роботі лишилось сім робочих статусів</span></li>
         <li class="done"><span class="tick">✓</span><span class="lbl">Реєстр Нової Пошти — механізм працює, формується зі списку замовлень</span></li>
-        <li class="done"><span class="tick">✓</span><span class="lbl">Створено другий склад — можна переміщувати товари між складами</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Два склади: залишок ведеться по кожному окремо, а на сайт іде сума по обох. Склад обирається в кожній позиції замовлення</span></li>
         <li class="done"><span class="tick">✓</span><span class="lbl">Замовлення на відсутній товар: причину знайдено й усунено — сайт більше не продає те, що вже в резерві</span></li>
-        <li class="done"><span class="tick">✓</span><span class="lbl">Списання переведено на статус «Передан в доставку» — товар списується при відправці, а не через тиждень</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Залишки звірені повністю: усі 1006 товарів на сайті збігаються з CRM до штуки. Покупцю цифра не показується, а те, що закінчилось, лишається на сайті з позначкою «розпродано»</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Списання переведено на статус «Прийнято» — товар списується, щойно менеджер підтвердив замовлення, а не через тиждень</span></li>
         <li class="done"><span class="tick">✓</span><span class="lbl">Вимкнено автовидалення замовлень, які не синхронізувалися</span></li>
-        <li class="todo"><span class="tick">✓</span><span class="lbl">Здача: проходимо все разом + коротка інструкція</span></li>
+        <li class="done"><span class="tick">✓</span><span class="lbl">Інструкція «Як влаштована ваша CRM» готова — 6 сторінок, від складів і списання до документів і того, що краще не чіпати</span></li>
+        <li class="you"><span class="tick">?</span><span class="lbl">Пройтись по інструкції разом, щоб зняти питання — коли вам буде зручно</span></li>
       </ul>
     </section>
 
@@ -271,7 +292,7 @@ footer a{color:var(--green-d);text-decoration:none}
         <li class="done"><span class="tick">✓</span><span class="lbl">Зведення кас: заморожено в НП / ФОП / готівка / картка</span></li>
         <li class="done"><span class="tick">✓</span><span class="lbl">Видно, де саме гроші з наложки: їде до клієнта / у відділенні / повертається</span></li>
         <li class="done"><span class="tick">✓</span><span class="lbl">Лист постачальників зі статусом доставки «в дорозі / доставлено»</span></li>
-        <li class="now"><span class="tick">✓</span><span class="lbl">Облік витрат — обираємо з вами зручний спосіб ведення</span></li>
+        <li class="you"><span class="tick">?</span><span class="lbl">Облік витрат: чекаємо, який спосіб ведення вам зручніший. Щойно скажете, зробимо</span></li>
         <li class="done"><span class="tick">✓</span><span class="lbl">Журнал списань з бота — пишеться в цю саму таблицю, лист «Списання»</span></li>
       </ul>
     </section>
@@ -350,8 +371,29 @@ footer a{color:var(--green-d);text-decoration:none}
       </div>
     </section>
 
+    <section class="docs">
+      <h2>Інструкції</h2>
+      <p class="rsub">Короткі PDF без термінології: що де лежить, що на що впливає і що краще не чіпати. Відкриваються в новій вкладці, можна зберегти або роздрукувати.</p>
+      <a class="dcard" href="docs/instrukciya-crm-kmall.pdf" target="_blank" rel="noopener">
+        <span class="dicon">PDF</span>
+        <span class="dtitle">Як влаштована ваша CRM</span>
+        <span class="dmeta">6 сторінок · склади й залишки · резерв і списання · статуси · каси · документи · що не чіпати</span>
+        <span class="dopen">Відкрити →</span>
+      </a>
+      <a class="dcard" href="docs/instrukciya-ceny-kmall.pdf" target="_blank" rel="noopener">
+        <span class="dicon">PDF</span>
+        <span class="dtitle">Як міняти ціни на сайті</span>
+        <span class="dmeta">6 сторінок · націнка · своя ціна для бренду · знижка на окремий товар</span>
+        <span class="dopen">Відкрити →</span>
+      </a>
+    </section>
+
     <section class="log">
       <h2>Журнал проєкту</h2>
+      <div class="log-item">
+        <span class="d">03.08 · вечір</span>
+        <p><b>Закрили хвости першого етапу.</b> Звірили залишки: усі 1006 товарів на сайті збігаються з KeyCRM до штуки, розбіжностей немає. Перевірили, що бачить покупець: цифра залишку прихована, а те, що закінчилось, лишається на сайті з позначкою «розпродано» і без кнопки покупки. Склади: перевірили наскрізно, що на сайт іде сума по обох складах, а не тільки по основному. Статус «Доставляється» звільнився і прибраний, у роботі лишилось сім статусів. Зібрали інструкцію «Як влаштована ваша CRM» — вона вище, в розділі «Інструкції».</p>
+      </div>
       <div class="log-item">
         <span class="d">28.07 · вечір</span>
         <p>Отримано 5 000 ₴ в рахунок Етапу 3. Дякуємо! Залишок по етапу — 7 000 ₴, окремо задача з опт/роздрібом.</p>
