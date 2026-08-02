@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
-<title>KMALL · звіт з обслуговування · 2 серпня 2026</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<title>KMALL — звіт з обслуговування сайту, 2 серпня 2026</title>
 <style>
 @page { size: 210mm 297mm; margin: 0; }
 :root{
@@ -45,26 +45,20 @@ td.warn{color:var(--amber);font-weight:600;white-space:nowrap}
 
 .foot{position:absolute;left:15mm;right:15mm;bottom:6mm;display:flex;justify-content:space-between;font-size:8pt;color:var(--grey);border-top:1px solid var(--line);padding-top:2.5mm}
 
-/* ── вигляд у браузері: сторінки течуть, а не жорсткі аркуші ── */
 @media screen {
-  body{background:#eef0ef;padding:14px 10px 40px}
+  body{background:#eef0ef;padding:14px 10px 40px;font-size:14px;line-height:1.55}
   .page{height:auto;min-height:0;width:100%;max-width:190mm;margin:0 auto 14px;
         background:#fff;border-radius:10px;box-shadow:0 2px 14px rgba(29,31,30,.08);
         padding:22px 26px 56px;page-break-after:auto}
   .foot{position:static;margin-top:22px}
-  .big{flex-wrap:wrap}
-  .big>div{min-width:120px}
-  table{font-size:13px}
-  body{font-size:14px;line-height:1.55}
-  h1{font-size:26px} h2{font-size:18px}
+  .big{flex-wrap:wrap} .big>div{min-width:120px}
+  table{font-size:13px} h1{font-size:26px} h2{font-size:18px}
   .note,.warn,.good{font-size:13px}
 }
 @media screen and (max-width:640px){
   .page{padding:16px 14px 40px}
-  .big{gap:8px}
-  .big>div{flex:1 1 44%}
-  table{font-size:12px}
-  th,td{padding:6px 7px}
+  .big{gap:8px} .big>div{flex:1 1 44%}
+  table{font-size:12px} th,td{padding:6px 7px}
 }
 </style>
 
@@ -161,8 +155,8 @@ td.warn{color:var(--amber);font-weight:600;white-space:nowrap}
     <b>Обліковий запис з іменем «admin».</b> Це стандартне ім'я, з якого починають підбір пароля всі автоматичні атаки. Безпечніше перейменувати або видалити, якщо ним не користуються.
   </div>
 
-  <div class="warn">
-    <b>Два розширення для звʼязку з CRM працюють одночасно.</b> На сайті встановлені «WooCommerce Keycrm.app» і «Синхронізація KeyCRM з WooCommerce». Ймовірно, одне з них зайве й дублює звернення до CRM. Розберемося, яке саме потрібне, і зайве вимкнемо.
+  <div class="note">
+    <b>Звʼязок з CRM перевірено.</b> На сайті працюють два розширення, і це правильно: одне відповідає за замовлення, покупців і статуси (сайт → CRM і назад), друге підтягує каталог, ціни й залишки (CRM → сайт). Обидва налаштовані коректно, включно з привʼязкою способів оплати й доставки. Єдине, що варто буде уточнити згодом, — залишки оновлюються обома, тут можливе дублювання.
   </div>
 
   <div class="warn">
@@ -179,7 +173,6 @@ td.warn{color:var(--amber);font-weight:600;white-space:nowrap}
 <div class="page">
   <h2><span class="n">8</span> Що робимо далі</h2>
   <ul>
-    <li>Розбираємося з двома розширеннями CRM і вимикаємо зайве</li>
     <li>Готуємо перехід модуля оплати на офіційну версію</li>
     <li>Продовжуємо роботу над швидкістю сторінок: зараз одна сторінка збирається близько півтори секунди, є куди прискорити</li>
     <li>Спостерігаємо за навантаженням після переходу на новий тариф хостингу</li>
