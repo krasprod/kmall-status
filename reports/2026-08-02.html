@@ -60,7 +60,24 @@ td.warn{color:var(--amber);font-weight:600;white-space:nowrap}
   .big{gap:8px} .big>div{flex:1 1 44%}
   table{font-size:12px} th,td{padding:6px 7px}
 }
+
+/* ── кнопка повернення (тільки на екрані, у друк не йде) ── */
+.backbar{display:none}
+@media screen{
+  .backbar{display:block;max-width:190mm;margin:0 auto 12px}
+  .backbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    background:#fff;color:#2b7e52;border:1px solid #d9e2dd;border-radius:999px;
+    padding:9px 18px 9px 14px;font-size:13px;font-weight:600;
+    box-shadow:0 1px 6px rgba(29,31,30,.06);transition:.18s}
+  .backbtn:hover{background:#eef5f1;border-color:#45976c;transform:translateX(-2px)}
+  .backbtn .ar{font-size:15px;line-height:1}
+}
+@media print{ .backbar{display:none !important} }
 </style>
+
+<div class="backbar">
+  <a class="backbtn" href="../#site"><span class="ar">←</span> Назад до статусу проєкту</a>
+</div>
 
 <div class="page">
   <div class="logo">KMALL<small>cosmetics store</small></div>
