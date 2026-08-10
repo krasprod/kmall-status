@@ -1,0 +1,176 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>KMALL — звіт з обслуговування сайту, 10 серпня 2026</title>
+<style>
+@page { size: 210mm 297mm; margin: 0; }
+:root{
+  --green:#45976c; --green-d:#2b7e52; --green-t:#eef5f1;
+  --ink:#1d1f1e; --grey:#6f7772; --line:#e3e7e5; --soft:#f7f9f8;
+  --amber:#9a6b00; --amber-t:#fdf6e3; --red:#b3261e; --red-t:#fdeeee;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;color:var(--ink);font-size:10pt;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:283mm;padding:13mm 15mm 10mm;page-break-after:always;position:relative}
+.page:last-child{page-break-after:auto}
+
+.logo{font-family:Georgia,serif;font-size:19pt;letter-spacing:.4em;text-indent:.4em;font-weight:600;text-align:center}
+.logo small{display:block;font-family:'Montserrat',sans-serif;font-size:6.5pt;letter-spacing:.3em;color:var(--grey);margin-top:3px;text-indent:0;text-transform:uppercase}
+h1{font-size:19pt;font-weight:700;letter-spacing:-.02em;margin:7mm 0 1mm;line-height:1.15}
+.sub{color:var(--grey);font-size:9.5pt;margin-bottom:6mm}
+
+h2{font-size:12.5pt;font-weight:700;margin:6mm 0 2.5mm;padding-bottom:1.8mm;border-bottom:2px solid var(--green);display:flex;align-items:baseline;gap:3mm}
+h2 .n{display:inline-flex;align-items:center;justify-content:center;min-width:8mm;height:8mm;border-radius:50%;background:var(--green);color:#fff;font-size:9pt;flex:0 0 auto}
+p{margin-bottom:2.5mm}
+b{font-weight:600}
+ul{margin:0 0 3mm 5mm}
+li{margin-bottom:1.5mm}
+
+table{width:100%;border-collapse:collapse;margin:2.5mm 0;font-size:9pt}
+th{background:var(--soft);text-align:left;padding:2mm 2.5mm;font-weight:600;border-bottom:1.5px solid var(--line);font-size:8.5pt}
+td{padding:2mm 2.5mm;border-bottom:1px solid var(--line);vertical-align:top}
+td.ok{color:var(--green-d);font-weight:600;white-space:nowrap}
+td.warn{color:var(--amber);font-weight:600;white-space:nowrap}
+
+.note{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:3mm 3.5mm;margin:2.5mm 0;font-size:9pt}
+.warn{background:var(--amber-t);border:1px solid #e8d9a8;border-left:3px solid #d9a520;border-radius:4px;padding:3mm 3.5mm;margin:2.5mm 0;font-size:9pt}
+.warn b{color:var(--amber)}
+.good{background:var(--green-t);border-left:3px solid var(--green);border-radius:4px;padding:3mm 3.5mm;margin:2.5mm 0;font-size:9pt}
+.good b{color:var(--green-d)}
+
+.big{display:flex;gap:4mm;margin:4mm 0}
+.big>div{flex:1;border:1px solid var(--line);border-radius:5px;padding:3.5mm;text-align:center}
+.big .v{font-size:17pt;font-weight:700;color:var(--green-d);line-height:1.1}
+.big .l{font-size:7.5pt;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-top:1.5mm}
+
+.foot{position:absolute;left:15mm;right:15mm;bottom:6mm;display:flex;justify-content:space-between;font-size:8pt;color:var(--grey);border-top:1px solid var(--line);padding-top:2.5mm}
+
+@media screen {
+  body{background:#eef0ef;padding:14px 10px 40px;font-size:14px;line-height:1.55}
+  .page{height:auto;min-height:0;width:100%;max-width:190mm;margin:0 auto 14px;
+        background:#fff;border-radius:10px;box-shadow:0 2px 14px rgba(29,31,30,.08);
+        padding:22px 26px 56px;page-break-after:auto}
+  .foot{position:static;margin-top:22px}
+  .big{flex-wrap:wrap} .big>div{min-width:120px}
+  table{font-size:13px} h1{font-size:26px} h2{font-size:18px}
+  .note,.warn,.good{font-size:13px}
+}
+@media screen and (max-width:640px){
+  .page{padding:16px 14px 40px}
+  .big{gap:8px} .big>div{flex:1 1 44%}
+  table{font-size:12px} th,td{padding:6px 7px}
+}
+
+/* ── кнопка повернення (тільки на екрані, у друк не йде) ── */
+.backbar{display:none}
+@media screen{
+  .backbar{display:block;max-width:190mm;margin:0 auto 12px}
+  .backbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    background:#fff;color:#2b7e52;border:1px solid #d9e2dd;border-radius:999px;
+    padding:9px 18px 9px 14px;font-size:13px;font-weight:600;
+    box-shadow:0 1px 6px rgba(29,31,30,.06);transition:.18s}
+  .backbtn:hover{background:#eef5f1;border-color:#45976c;transform:translateX(-2px)}
+  .backbtn .ar{font-size:15px;line-height:1}
+}
+@media print{ .backbar{display:none !important} }
+</style>
+
+<div class="page">
+  <div class="logo">KMALL<small>обслуговування сайту</small></div>
+  <h1>Планова перевірка та профілактика</h1>
+  <div class="sub">10 серпня 2026, понеділок · звіт для Вікторії та Володимира</div>
+
+  <div class="big">
+    <div><div class="v">26</div><div class="l">перевірок</div></div>
+    <div><div class="v">4</div><div class="l">оновлення</div></div>
+    <div><div class="v">2</div><div class="l">закриті дірки</div></div>
+    <div><div class="v">0</div><div class="l">критичних проблем</div></div>
+  </div>
+
+  <h2><span class="n">1</span>Головне за цей раз: закрив підбір паролів</h2>
+  <p>Це найважливіше, тому починаю з нього. У журналі сайту було видно, що хтось методично
+  підбирає паролі до адмінки: <b>301 спроба за 4 серпня</b> і ще <b>252 за 6–9 серпня</b>.
+  Не навмання, а по <b>справжніх, існуючих</b> логінах. Тобто логіни хтось дізнався.</p>
+
+  <p>Дізнатися було нескладно, і це головна причина. <b>Сайт сам їх публікував:</b> службова
+  адреса віддавала список усіх облікових записів будь-кому без входу, а ще один службовий
+  адрес перекидав на сторінку з логіном автора. Достатньо було відкрити два посилання.</p>
+
+  <div class="good"><b>Що зробив.</b> Перелік облікових записів для неавторизованих закрив,
+  сторінки авторів більше не відкриваються. Додатково: сторінка входу більше не підказує,
+  чи існує такий логін, і зʼявилось мʼяке обмеження — 15 невдалих спроб з однієї адреси
+  за 10 хвилин дають паузу на 10 хвилин.</p>
+
+  <p>Поріг високий свідомо. Людина, яка забула пароль, робить три-пʼять спроб і в блок не
+  впирається, а для автоматичного підбору 15 спроб на 10 хвилин це вже безглуздо.
+  <b>Нікого не розлогінило, чинні входи не зачеплені.</b></p>
+
+  <div class="note">Одну річ навмисно <b>не</b> закривав, хоча її часто радять закривати:
+  службовий канал XML-RPC. Через нього працює звʼязок з WordPress.com, а на ньому тримається
+  вивантаження товарів у Google. Закрив би «для безпеки» і зупинив рекламу.</div>
+
+  <h2><span class="n">2</span>Що перевірено</h2>
+  <table>
+    <tr><th>Що</th><th>Результат</th></tr>
+    <tr><td>Ключові сторінки: головна, каталог, кошик, оформлення, кабінет, розділ Sale</td><td class="ok">усі відкриваються</td></tr>
+    <tr><td>Помилки PHP на сторінках</td><td class="ok">жодної</td></tr>
+    <tr><td>Сертифікат безпеки (https)</td><td class="ok">продовжено до 1 листопада</td></tr>
+    <tr><td>Ядро WordPress</td><td class="ok">7.0.3, найсвіжіше</td></tr>
+    <tr><td>Синхронізація з KeyCRM</td><td class="ok">працює, 1269 товарів</td></tr>
+    <tr><td>Ціни на витрині та націнки по брендах</td><td class="ok">на місці, не зрушили</td></tr>
+    <tr><td>Черга фонових завдань</td><td class="ok">у нормі, не роздута</td></tr>
+    <tr><td>Розмір бази</td><td class="ok">126 МБ, зростання звичайне</td></tr>
+    <tr><td>Швидкість головної</td><td class="ok">0,07 с</td></tr>
+    <tr><td>Сторінка входу після всіх робіт</td><td class="ok">працює</td></tr>
+  </table>
+
+  <div class="foot"><span>KMALL · обслуговування сайту</span><span>10.08.2026 · сторінка 1 з 2</span></div>
+</div>
+
+<div class="page">
+  <div class="logo">KMALL<small>обслуговування сайту</small></div>
+
+  <h2><span class="n">3</span>Оновлення</h2>
+  <p>Перед роботами зробив копію бази як точку відкату. Оновив чотири розширення:</p>
+  <table>
+    <tr><th>Що</th><th>Було</th><th>Стало</th></tr>
+    <tr><td>Elementor (конструктор сторінок)</td><td>4.2.1</td><td>4.2.2</td></tr>
+    <tr><td>Flexible Checkout Fields (поля оформлення)</td><td>4.1.39</td><td>4.1.40</td></tr>
+    <tr><td>Simple History (журнал дій)</td><td>5.29.0</td><td>5.30.0</td></tr>
+    <tr><td>Yoast SEO</td><td>28.1</td><td>28.2</td></tr>
+  </table>
+  <p>Після оновлень перевірив сторінки, ціни на конкретних товарах і вхід у адмінку. Все на місці.</p>
+
+  <h2><span class="n">4</span>Що свідомо НЕ оновлював</h2>
+  <div class="warn"><b>WooCommerce, 10.9.4 → 11.0.0.</b> Це перехід на нову велику версію, а не
+  дрібне виправлення. У вас на сайті переписані під тему шаблони магазину, два розширення для
+  звʼязку з CRM і платіжний модуль, встановлений вручну, тобто такий, що оновлень не отримує.
+  Плюс розширення Meta вже позначене як неперевірене навіть з поточною версією.
+  Таке оновлення треба робити в окреме віконце, з повною копією разом із замовленнями,
+  і з перевіркою оформлення замовлення після. Одним кліком посеред робочого дня — ні.</div>
+
+  <div class="warn"><b>Google for WooCommerce, 3.8.1 → 3.9.0.</b> Тут рівно 50 на 50: може
+  виправити те, що зараз не дає підтвердити підключення, а може додати сюрпризів посеред
+  працюючих кампаній. Пропоную робити окремо і одразу дивитись на результат, а не разом
+  з іншими змінами.</div>
+
+  <h2><span class="n">5</span>Прибирання</h2>
+  <p>Видалив обліковий запис <b>myedislatu</b> з поштою на одноразовому домені — реєстрація
+  від 28 липня, схожа на спам. Перед видаленням перевірив, що на ньому не висить нічого:
+  ні замовлень, ні відгуків, ні сторінок. Облікових записів на сайті стало 134.</p>
+
+  <h2><span class="n">6</span>Що лишається відкритим</h2>
+  <table>
+    <tr><th>Що</th><th>Стан</th></tr>
+    <tr><td>Підтвердження акаунта WordPress.com для Google</td><td class="warn">за рекламником</td></tr>
+    <tr><td>505 товарів ідуть у Google без ціни (це позиції, яких немає в наявності)</td><td class="warn">розбираюсь</td></tr>
+    <tr><td>Обмеження сервера 30 секунд на операцію</td><td class="warn">підіймається в панелі хостингу</td></tr>
+    <tr><td>WooCommerce 11 і Google 3.9</td><td class="warn">окреме віконце</td></tr>
+  </table>
+
+  <div class="note">Пароль до адмінки, який колись передавали в переписці, досі не змінений,
+  а підбирають його щодня. Зміна пароля зараз обнулить усі ці спроби. Це одна дія у профілі,
+  новий пароль ви задаєте самі.</div>
+
+  <div class="foot"><span>KMALL · обслуговування сайту</span><span>10.08.2026 · сторінка 2 з 2</span></div>
+</div>
