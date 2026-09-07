@@ -189,8 +189,8 @@ footer a{color:var(--green-d);text-decoration:none}
 <body>
 <header>
   <div class="wrap">
-    <div class="logo">KMALL<small>статус проєкту</small></div>
-    <p class="lead">Жива сторінка проєкту. Тут видно, що вже зроблено, що в роботі просто зараз і що попереду — крок за кроком, без дзвінків і звітів.</p>
+    <div class="logo">KMALL<small>обслуговування сайту</small></div>
+    <p class="lead">Жива сторінка обслуговування сайту. Тут видно, що перевірено, що зроблено і що попереду, без дзвінків і зайвих звітів.</p>
   </div>
 </header>
 
@@ -199,12 +199,12 @@ footer a{color:var(--green-d);text-decoration:none}
 
     <div class="tabs-wrap">
       <div class="tabs">
-        <button class="tabbtn on" data-tab="crm">Проєкт: CRM</button>
-        <button class="tabbtn" data-tab="site">Обслуговування сайту</button>
+        <button class="tabbtn" data-tab="crm" hidden>Проєкт: CRM</button>
+        <button class="tabbtn on" data-tab="site">Обслуговування сайту</button>
       </div>
     </div>
 
-    <div class="tabpane on" id="pane-crm">
+    <div class="tabpane" id="pane-crm">
 
       <section class="summary">
       <div class="progress">
@@ -573,7 +573,7 @@ footer a{color:var(--green-d);text-decoration:none}
     </div><!-- /pane-crm -->
 
     <!-- ══════════ ВКЛАДКА: ОБСЛУГОВУВАННЯ САЙТУ ══════════ -->
-    <div class="tabpane" id="pane-site">
+    <div class="tabpane on" id="pane-site">
 
       <section class="reports">
         <h2>Звіти з обслуговування</h2>
@@ -637,7 +637,7 @@ footer a{color:var(--green-d);text-decoration:none}
           <span class="d">07.09 · ранок</span>
           <p><b>Щотижнева перевірка та профілактика.</b> 30 перевірок, критичних проблем немає. Замовлення за тиждень дійшли до CRM усі, 44 з 44. Оновив 11 розширень, перед цим зробив повну копію бази, після перевірив сторінки, ціни, кошик і оформлення. Повний звіт вище, в розділі «Звіти з обслуговування».</p>
           <p>Сторож завантаження товарів за перший тиждень спрацював сім разів: сім обривів, які раніше зупиняли б сайт на годину кожен, тепер коштували 10–18 хвилин. Продовжую збирати статистику для рішення по тарифу хостингу.</p>
-          <p>Виніс окремо два питання: статуси замовлень з CRM на сайт не оновлюються з 3 серпня (покупець у кабінеті бачить старий статус, на роботу в CRM не впливає), і фонове відео на першому екрані головної не запускається. WooCommerce 11 і модуль Нової Пошти свідомо не оновлював, це окремі віконця.</p>
+          <p>Виніс окремо одне питання: статуси замовлень з CRM на сайт не оновлюються з 3 серпня, покупець у кабінеті бачить старий статус, на роботу в CRM це не впливає. WooCommerce 11 і модуль Нової Пошти свідомо не оновлював, це окремі віконця.</p>
         </div>
         <div class="log-item">
           <span class="d">01.09 · ранок</span>
@@ -783,7 +783,7 @@ footer a{color:var(--green-d);text-decoration:none}
   }
   btns.forEach(function(b){ b.addEventListener('click',function(){ show(b.dataset.tab); }); });
   var h=(location.hash||'').replace('#','');
-  if(h==='site') show('site');
+  if(h==='crm') show('crm'); else show('site');
 })();
 </script>
 

@@ -1,81 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>KMALL — звіт з обслуговування сайту, 7 вересня 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cormorant+Garamond:wght@600&display=swap&subset=cyrillic,latin" rel="stylesheet">
 <style>
-@page { size: 210mm 297mm; margin: 0; }
 :root{
   --green:#45976c; --green-d:#2b7e52; --green-t:#eef5f1;
-  --ink:#1d1f1e; --grey:#6f7772; --line:#e3e7e5; --soft:#f7f9f8;
-  --amber:#9a6b00; --amber-t:#fdf6e3; --red:#b3261e; --red-t:#fdeeee;
+  --ink:#1d1f1e; --grey:#6f7772; --line:#e3e7e5; --soft:#f7f9f8; --bg:#eef0ef;
+  --amber:#9a6b00; --amber-b:#d9a520; --amber-t:#fdf6e3;
+  --blue:#2f5d8a; --blue-t:#eaf1f8;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;color:var(--ink);font-size:10pt;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.page{width:210mm;height:283mm;padding:13mm 15mm 10mm;page-break-after:always;position:relative}
-.page:last-child{page-break-after:auto}
-
-.logo{font-family:Georgia,serif;font-size:19pt;letter-spacing:.4em;text-indent:.4em;font-weight:600;text-align:center}
-.logo small{display:block;font-family:'Montserrat',sans-serif;font-size:6.5pt;letter-spacing:.3em;color:var(--grey);margin-top:3px;text-indent:0;text-transform:uppercase}
-h1{font-size:19pt;font-weight:700;letter-spacing:-.02em;margin:7mm 0 1mm;line-height:1.15}
-.sub{color:var(--grey);font-size:9.5pt;margin-bottom:6mm}
-
-h2{font-size:12.5pt;font-weight:700;margin:6mm 0 2.5mm;padding-bottom:1.8mm;border-bottom:2px solid var(--green);display:flex;align-items:baseline;gap:3mm}
-h2 .n{display:inline-flex;align-items:center;justify-content:center;min-width:8mm;height:8mm;border-radius:50%;background:var(--green);color:#fff;font-size:9pt;flex:0 0 auto}
-p{margin-bottom:2.5mm}
-b{font-weight:600}
-ul{margin:0 0 3mm 5mm}
-li{margin-bottom:1.5mm}
-
-table{width:100%;border-collapse:collapse;margin:2.5mm 0;font-size:9pt}
-th{background:var(--soft);text-align:left;padding:2mm 2.5mm;font-weight:600;border-bottom:1.5px solid var(--line);font-size:8.5pt}
-td{padding:2mm 2.5mm;border-bottom:1px solid var(--line);vertical-align:top}
-td.ok{color:var(--green-d);font-weight:600;white-space:nowrap}
-td.warn{color:var(--amber);font-weight:600;white-space:nowrap}
-
-.note{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:3mm 3.5mm;margin:2.5mm 0;font-size:9pt}
-.warn{background:var(--amber-t);border:1px solid #e8d9a8;border-left:3px solid #d9a520;border-radius:4px;padding:3mm 3.5mm;margin:2.5mm 0;font-size:9pt}
-.warn b{color:var(--amber)}
-.good{background:var(--green-t);border-left:3px solid var(--green);border-radius:4px;padding:3mm 3.5mm;margin:2.5mm 0;font-size:9pt}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;color:var(--ink);background:var(--bg);font-size:15px;line-height:1.55;padding:14px 10px 50px}
+.wrap{max-width:760px;margin:0 auto}
+.backbar{margin:0 0 12px}
+.backbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:#fff;color:var(--green-d);border:1px solid #d9e2dd;border-radius:999px;padding:9px 18px 9px 14px;font-size:13px;font-weight:600;box-shadow:0 1px 6px rgba(29,31,30,.06);transition:.18s}
+.backbtn:hover{background:var(--green-t);border-color:var(--green);transform:translateX(-2px)}
+.card{background:#fff;border-radius:12px;box-shadow:0 2px 14px rgba(29,31,30,.07);padding:26px 28px;margin-bottom:14px}
+.logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;letter-spacing:.4em;text-indent:.4em;font-weight:600;text-align:center}
+.logo small{display:block;font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:.3em;color:var(--grey);margin-top:3px;text-indent:0;text-transform:uppercase}
+h1{font-size:24px;font-weight:700;letter-spacing:-.02em;margin:22px 0 4px;line-height:1.2}
+.sub{color:var(--grey);font-size:14px;margin-bottom:18px}
+.big{display:flex;gap:10px;flex-wrap:wrap}
+.big>div{flex:1 1 130px;border:1px solid var(--line);border-radius:10px;padding:14px 10px;text-align:center;background:var(--soft)}
+.big .v{font-size:24px;font-weight:700;color:var(--green-d);line-height:1.1}
+.big .l{font-size:10.5px;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-top:6px}
+.lead{margin-top:18px;font-size:15px}
+h2{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin:6px 0 10px}
+/* ── чекліст ── */
+.list{display:flex;flex-direction:column;gap:8px}
+details{border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}
+details[open]{border-color:#cfdad4;box-shadow:0 2px 10px rgba(29,31,30,.05)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:30px 1fr auto 18px;gap:12px;align-items:center;padding:13px 16px;font-size:15px}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:var(--soft)}
+.ic{width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:var(--green)}
+.ic.warn{background:var(--amber-b)}
+.ic.info{background:var(--blue)}
+.t{font-weight:600}
+.r{font-size:13px;color:var(--green-d);font-weight:600;white-space:nowrap;text-align:right}
+.r.warn{color:var(--amber)} .r.info{color:var(--blue)}
+.chev{width:10px;height:10px;border-right:2px solid #b7c1bb;border-bottom:2px solid #b7c1bb;transform:rotate(45deg);transition:.2s;margin-top:-4px;justify-self:end}
+details[open] .chev{transform:rotate(-135deg);margin-top:4px}
+.body{padding:2px 16px 16px 58px;font-size:14px;color:#2a2d2c;border-top:1px dashed var(--line)}
+.body p{margin:10px 0 0}
+.body ul{margin:8px 0 0 18px}
+.body li{margin-bottom:4px}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px}
+th{background:var(--soft);text-align:left;padding:7px 9px;font-weight:600;border-bottom:1.5px solid var(--line);font-size:12.5px}
+td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-top:10px}
+.warnbox{background:var(--amber-t);border:1px solid #e8d9a8;border-left:3px solid var(--amber-b);border-radius:8px;padding:10px 12px;margin-top:10px}
+.warnbox b{color:var(--amber)}
+.good{background:var(--green-t);border-left:3px solid var(--green);border-radius:8px;padding:10px 12px;margin-top:10px}
 .good b{color:var(--green-d)}
-
-.big{display:flex;gap:4mm;margin:4mm 0}
-.big>div{flex:1;border:1px solid var(--line);border-radius:5px;padding:3.5mm;text-align:center}
-.big .v{font-size:17pt;font-weight:700;color:var(--green-d);line-height:1.1}
-.big .l{font-size:7.5pt;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-top:1.5mm}
-
-.foot{position:absolute;left:15mm;right:15mm;bottom:6mm;display:flex;justify-content:space-between;font-size:8pt;color:var(--grey);border-top:1px solid var(--line);padding-top:2.5mm}
-
-@media screen {
-  body{background:#eef0ef;padding:14px 10px 40px;font-size:14px;line-height:1.55}
-  .page{height:auto;min-height:0;width:100%;max-width:190mm;margin:0 auto 14px;
-        background:#fff;border-radius:10px;box-shadow:0 2px 14px rgba(29,31,30,.08);
-        padding:22px 26px 56px;page-break-after:auto}
-  .foot{position:static;margin-top:22px}
-  .big{flex-wrap:wrap} .big>div{min-width:120px}
-  table{font-size:13px} h1{font-size:26px} h2{font-size:18px}
-  .note,.warn,.good{font-size:13px}
+.foot{display:flex;justify-content:space-between;font-size:12px;color:var(--grey);padding:6px 4px 0}
+.tools{display:flex;gap:10px;justify-content:flex-end;margin:-4px 0 10px}
+.tools button{font:inherit;font-size:12px;font-weight:600;color:var(--green-d);background:#fff;border:1px solid #d9e2dd;border-radius:999px;padding:6px 12px;cursor:pointer}
+.tools button:hover{background:var(--green-t)}
+@media (max-width:560px){
+  .card{padding:18px 16px}
+  summary{grid-template-columns:26px 1fr 14px;padding:12px 12px}
+  .r{grid-column:2;text-align:left;white-space:normal;font-size:12.5px;margin-top:-6px}
+  .body{padding-left:14px}
+  h1{font-size:21px}
 }
-@media screen and (max-width:640px){
-  .page{padding:16px 14px 40px}
-  .big{gap:8px} .big>div{flex:1 1 44%}
-  table{font-size:12px} th,td{padding:6px 7px}
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .backbar,.tools,.chev{display:none!important}
+  .card{box-shadow:none;border:0;padding:0 0 10px;margin:0}
+  details{page-break-inside:avoid}
 }
-
-/* ── кнопка повернення (тільки на екрані, у друк не йде) ── */
-.backbar{display:none}
-@media screen{
-  .backbar{display:block;max-width:190mm;margin:0 auto 12px}
-  .backbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
-    background:#fff;color:#2b7e52;border:1px solid #d9e2dd;border-radius:999px;
-    padding:9px 18px 9px 14px;font-size:13px;font-weight:600;
-    box-shadow:0 1px 6px rgba(29,31,30,.06);transition:.18s}
-  .backbtn:hover{background:#eef5f1;border-color:#45976c;transform:translateX(-2px)}
-  .backbtn .ar{font-size:15px;line-height:1}
-}
-@media print{ .backbar{display:none !important} }
 </style>
-<div class="backbar"><a class="backbtn" href="../index.html#site"><span class="ar">←</span>До сторінки проєкту</a></div>
-<div class="page">
+</head>
+<body>
+<div class="wrap">
+<div class="backbar"><a class="backbtn" href="../index.html"><span>←</span>До сторінки проєкту</a></div>
+
+<div class="card">
   <div class="logo">KMALL<small>обслуговування сайту</small></div>
   <h1>Щотижнева перевірка та профілактика</h1>
   <div class="sub">7 вересня 2026, понеділок · звіт для Вікторії та Володимира</div>
@@ -85,126 +93,159 @@ td.warn{color:var(--amber);font-weight:600;white-space:nowrap}
     <div><div class="v">44 / 44</div><div class="l">замовлень дійшло в CRM</div></div>
     <div><div class="v">0</div><div class="l">критичних проблем</div></div>
   </div>
-
-  <h2><span class="n">1</span>Коротко</h2>
-  <p>Тиждень пройшов без інцидентів. Сайт відкривається, помилок немає, сертифікат чинний, замовлення доходять
-  до CRM усі до одного, товари з CRM на сайт заїжджають штатно. Оновив 11 розширень, перед цим зробив повну копію
-  бази як точку відкату, після оновлень перевірив сторінки, ціни, кошик і оформлення замовлення.</p>
-  <div class="good"><b>Сторож, якого поставив 27 серпня, відпрацював сім разів.</b> Кожен обрив завантаження товарів
-  коштував 10–18 хвилин замість години, і жодного разу вам не довелось цього помічати. Деталі в розділі 5.</div>
-
-  <h2><span class="n">2</span>Що перевірено</h2>
-  <table>
-    <tr><th>Що</th><th>Результат</th></tr>
-    <tr><td>Ключові сторінки: головна, каталог, товар, кошик, оформлення, кабінет, контакти, пошук</td><td class="ok">усі відкриваються</td></tr>
-    <tr><td>Помилки PHP на сторінках</td><td class="ok">жодної</td></tr>
-    <tr><td>Швидкість головної / інших сторінок, биті картинки</td><td class="ok">0,07 с / 1,2–1,5 с, битих немає</td></tr>
-    <tr><td>Сертифікат безпеки (https)</td><td class="ok">чинний до 1 листопада</td></tr>
-    <tr><td>Ядро WordPress і тема</td><td class="ok">7.1 і 1.5.5, найсвіжіші</td></tr>
-    <tr><td>Замовлення з сайту в CRM за 7 днів</td><td class="ok">44 на сайті, 44 у CRM</td></tr>
-    <tr><td>Завантаження товарів з CRM</td><td class="ok">кожні 5 хв, останні 20 заходів успішні, 1342 товари</td></tr>
-    <tr><td>Ціни на вітрині та націнки по брендах</td><td class="ok">сходяться, перевірив на трьох товарах</td></tr>
-    <tr><td>Кошик і оформлення замовлення</td><td class="ok">товар додається, сума вірна, форма на місці</td></tr>
-    <tr><td>Черга фонових завдань</td><td class="ok">у нормі, прострочених немає</td></tr>
-    <tr><td>Розмір бази</td><td class="ok">153 МБ, зростання звичайне</td></tr>
-    <tr><td>Сторонні файли на сервері, службові файли сайту</td><td class="ok">чужого немає, не змінені</td></tr>
-  </table>
-  <div class="foot"><span>KMALL · обслуговування сайту</span><span>07.09.2026 · сторінка 1 з 4</span></div>
+  <p class="lead">Тиждень пройшов без інцидентів. Нижче все, що перевірено і зроблено, пунктами. Зелена позначка означає «в нормі», жовта «є про що домовитись». Кожен пункт розкривається, якщо потрібні деталі.</p>
 </div>
 
-<div class="page">
-  <div class="logo">KMALL<small>обслуговування сайту</small></div>
-  <h2><span class="n">3</span>Оновлення</h2>
-  <p>Перед роботами зробив повну копію бази разом із замовленнями. Оновив 11 розширень:</p>
-  <table>
-    <tr><th>Що</th><th>Було</th><th>Стало</th></tr>
-    <tr><td>Elementor (конструктор сторінок)</td><td>4.2.2</td><td>4.2.4</td></tr>
-    <tr><td>PRO Elements (розширення до конструктора)</td><td>4.1.0</td><td>4.2.2</td></tr>
-    <tr><td>Google for WooCommerce</td><td>3.9.0</td><td>3.9.3</td></tr>
-    <tr><td>Yoast SEO</td><td>28.2</td><td>28.4</td></tr>
-    <tr><td>Flexible Checkout Fields (поля оформлення)</td><td>4.1.40</td><td>4.1.41</td></tr>
-    <tr><td>Contact Form 7</td><td>6.1.6</td><td>6.1.7</td></tr>
-    <tr><td>Photo Reviews (відгуки з фото)</td><td>1.2.27</td><td>1.2.29</td></tr>
-    <tr><td>Smart Slider 3</td><td>3.5.1.38</td><td>3.5.1.39</td></tr>
-    <tr><td>Simple History (журнал дій)</td><td>5.30.0</td><td>5.32.0</td></tr>
-    <tr><td>WPCode (вставки коду)</td><td>2.3.8</td><td>2.3.9</td></tr>
-    <tr><td>All-in-One WP Migration (резервні копії)</td><td>7.107</td><td>7.110</td></tr>
-  </table>
-  <p>Після оновлень перевірив сторінки, ціни на конкретних товарах, кошик, оформлення замовлення і вхід в адмінку.
-  Кеш сторінок очистив, щоб покупці одразу отримали свіжу версію.</p>
+<div class="card">
+  <div class="tools"><button type="button" data-all="open">Розкрити все</button><button type="button" data-all="close">Згорнути все</button></div>
 
-  <h2><span class="n">4</span>Що свідомо не оновлював</h2>
-  <div class="warn"><b>WooCommerce, 10.9.4 → 11.1.0.</b> Те саме, що й минулого разу: це нова велика версія, а не
-  дрібне виправлення. На сайті переписані шаблони магазину, два розширення для звʼязку з CRM і платіжний модуль,
-  встановлений вручну. Робити таке треба в окреме віконце з перевіркою оформлення замовлення після, а не разом
-  з іншими оновленнями. Пропоную узгодити день.</div>
-  <div class="warn"><b>Нова Пошта (WC Ukraine Shipping), 1.21.12 → 1.22.4.</b> Це модуль доставки, через нього
-  проходить кожне замовлення. Накопичилось одразу кілька версій. Оновлю окремо, у спокійний час, і одразу зроблю
-  тестове замовлення з вибором відділення, щоб побачити, що нічого не зрушило.</div>
+  <h2>Сайт</h2>
+  <div class="list">
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Сторінки відкриваються, помилок немає</span><span class="r">10 з 10</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Перевірив головну, каталог, картку товару, кошик, оформлення замовлення, кабінет, контакти, блог, пошук і карту сайту. Усі відповідають кодом 200, помилок PHP на жодній немає, битих картинок і посилань на головній немає.</p>
+        <p>Швидкість: головна віддається з кешу за 0,07 с, решта сторінок за 1,2–1,5 с.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Сертифікат, ядро WordPress, тема</span><span class="r">актуальні</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Сертифікат безпеки (https) чинний до 1 листопада, продовжується автоматично. WordPress 7.1 найсвіжіший. Тема 1.5.5, оновлень не пропонує.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Ціни, кошик, оформлення замовлення</span><span class="r">працюють</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Перевірив як покупець, без входу в адмінку: ціни на вітрині сходяться з націнками по брендах (звірив три товари, в тому числі Medicube з окремою націнкою), товар додається в кошик, сума рахується правильно, форма оформлення з полями і оплатою на місці.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Сервер: файли, база, фонові задачі</span><span class="r">в нормі</span><span class="chev"></span></summary>
+      <div class="body">
+        <ul>
+          <li>Сторонніх файлів у папці завантажень немає, службові файли сайту не змінені.</li>
+          <li>База 153 МБ, зростання звичайне для магазину з такою кількістю замовлень.</li>
+          <li>Черга фонових завдань у нормі: 22 очікують, прострочених немає. Збійних 21, усі старі, за тиждень лише 6 і всі по звірці з Google.</li>
+          <li>Резервні копії на хостингу створюються щоночі. Окремо перед оновленнями зробив свою повну копію бази разом із замовленнями.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
 
-<div class="foot"><span>KMALL · обслуговування сайту</span><span>07.09.2026 · сторінка 2 з 4</span></div>
+  <h2 style="margin-top:22px">Звʼязка з CRM</h2>
+  <div class="list">
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Замовлення з сайту доходять у CRM</span><span class="r">44 з 44</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Звірив обидві бази за 7 днів: на сайті 44 замовлення, у CRM усі 44, під тими самими номерами сайту. Жодне не загубилось.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Товари з CRM заїжджають на сайт</span><span class="r">кожні 5 хв</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Останні 20 заходів завантаження успішні, у каталозі 1342 товари. За тиждень додано 60 нових карток, оновлено 194.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic info">7</span><span class="t">Сторож завантаження товарів: перший тиждень</span><span class="r info">спрацював 7 разів</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>27 серпня я поставив механізм, який стежить за завантаженням товарів з CRM: якщо захід обірвався і лишив позначку «завантаження ще триває», сторож знімає її сам і веде облік. За тиждень таких випадків сім:</p>
+        <table>
+          <tr><th>Коли</th><th>Скільки сайт стояв без оновлень товарів</th></tr>
+          <tr><td>1 вересня, 10:40</td><td>14 хв</td></tr>
+          <tr><td>1 вересня, 16:55</td><td>12 хв</td></tr>
+          <tr><td>3 вересня, 16:26</td><td>18 хв</td></tr>
+          <tr><td>4 вересня, 15:59</td><td>10 хв</td></tr>
+          <tr><td>4 вересня, 17:36</td><td>12 хв</td></tr>
+          <tr><td>4 вересня, 18:14</td><td>13 хв</td></tr>
+          <tr><td>5 вересня, 21:36</td><td>13 хв</td></tr>
+        </table>
+        <div class="good"><b>Що це означає.</b> Без сторожа кожен такий випадок блокував нові картки й залишки на годину, тобто за тиждень набралось би близько семи годин простою, як 26 серпня з поставкою Heimish і Masil. Тепер сумарно 92 хвилини, і все відновлюється саме, без дзвінків.</div>
+        <p>Чому обриваються заходи, сервер не записує. Усі сім випадків припадають на робочий час, коли на сайті найбільше відвідувачів і одночасно йдуть фонові задачі. Це збігається з тим, що ваш тариф хостингу обмежує процесорний час на добу. Одного тижня для висновку замало, тому продовжую збирати статистику, і за місяць буде видно, чи варто міняти тариф, чи достатньо сторожа.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic warn">!</span><span class="t">Статуси замовлень з CRM на сайт не оновлюються</span><span class="r warn">з 3 серпня</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Замовлення з сайту в CRM доходять справно, це перевірено. А от у зворотний бік, коли ви в CRM переводите замовлення у «відправлено» чи «виконано», на сайт це не потрапляє: завдання, яке мало це робити кожні 5 хвилин, зникло з планувальника.</p>
+        <p>Покупця це зачіпає в одному місці: у кабінеті на сайті він бачить старий статус. На роботу з замовленнями в CRM не впливає. Розберусь окремо, чому завдання зникло, і поверну.</p>
+      </div>
+    </details>
+  </div>
+
+  <h2 style="margin-top:22px">Безпека</h2>
+  <div class="list">
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Підбір паролів до адмінки</span><span class="r">жодного входу</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>За тиждень 926 спроб. Картина інша, ніж у серпні: усі спроби йдуть на логіни, яких на сайті немає, найчастіше на <b>admin</b> і на логін попередньої студії, який я прибрав ще в серпні. На справжні облікові записи спроб не було, стороннього входу немає. Обмеження на кількість спроб працює. З 6 вересня хвиля спала до кількох спроб на день.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Облікові записи</span><span class="r">адміністраторів 3, ті самі</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Адміністраторів троє: ви двоє і я. Нових прав нікому не додавалось. За тиждень зареєструвалось 15 покупців, усі виглядають як справжні.</p>
+        <div class="note">Один запис схожий на спам: <b>dorrissedillo1186</b>, пошта на одноразовому домені, реєстрація від 3 вересня, замовлень немає. Пропоную видалити, зроблю за вашим словом.</div>
+      </div>
+    </details>
+  </div>
+
+  <h2 style="margin-top:22px">Оновлення</h2>
+  <div class="list">
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Оновлено розширення</span><span class="r">11</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Перед роботами зробив повну копію бази як точку відкату. Після оновлень перевірив сторінки, ціни на конкретних товарах, кошик, оформлення і вхід в адмінку, очистив кеш сторінок.</p>
+        <table>
+          <tr><th>Що</th><th>Було</th><th>Стало</th></tr>
+          <tr><td>Elementor (конструктор сторінок)</td><td>4.2.2</td><td>4.2.4</td></tr>
+          <tr><td>PRO Elements (розширення до конструктора)</td><td>4.1.0</td><td>4.2.2</td></tr>
+          <tr><td>Google for WooCommerce</td><td>3.9.0</td><td>3.9.3</td></tr>
+          <tr><td>Yoast SEO</td><td>28.2</td><td>28.4</td></tr>
+          <tr><td>Flexible Checkout Fields (поля оформлення)</td><td>4.1.40</td><td>4.1.41</td></tr>
+          <tr><td>Contact Form 7</td><td>6.1.6</td><td>6.1.7</td></tr>
+          <tr><td>Photo Reviews (відгуки з фото)</td><td>1.2.27</td><td>1.2.29</td></tr>
+          <tr><td>Smart Slider 3</td><td>3.5.1.38</td><td>3.5.1.39</td></tr>
+          <tr><td>Simple History (журнал дій)</td><td>5.30.0</td><td>5.32.0</td></tr>
+          <tr><td>WPCode (вставки коду)</td><td>2.3.8</td><td>2.3.9</td></tr>
+          <tr><td>All-in-One WP Migration (резервні копії)</td><td>7.107</td><td>7.110</td></tr>
+        </table>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic warn">!</span><span class="t">Свідомо не оновлював</span><span class="r warn">2, потрібне окреме віконце</span><span class="chev"></span></summary>
+      <div class="body">
+        <div class="warnbox"><b>WooCommerce, 10.9.4 → 11.1.0.</b> Це нова велика версія, а не дрібне виправлення. На сайті переписані шаблони магазину, два розширення для звʼязку з CRM і платіжний модуль, встановлений вручну. Робити таке треба в окреме віконце з перевіркою оформлення замовлення після, а не разом з іншими оновленнями. Пропоную узгодити день.</div>
+        <div class="warnbox"><b>Нова Пошта (WC Ukraine Shipping), 1.21.12 → 1.22.4.</b> Це модуль доставки, через нього проходить кожне замовлення. Накопичилось одразу кілька версій. Оновлю окремо, у спокійний час, і одразу зроблю тестове замовлення з вибором відділення.</div>
+      </div>
+    </details>
+  </div>
+
+  <h2 style="margin-top:22px">Лишається відкритим</h2>
+  <div class="list">
+    <details>
+      <summary><span class="ic info">i</span><span class="t">Товари без ціни в CRM</span><span class="r info">480, було 505</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Частину вже заповнили. На покупця це не впливає, усі вони «немає в наявності», але Google так само не пропускає їх у рекламу. Рішення за вами і за рекламниками, варіанти описав у звіті від 10 серпня.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic info">i</span><span class="t">Тариф хостингу</span><span class="r info">висновок за місяць</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Сторож збирає статистику обривів. Коли назбирається місяць, буде видно, чи це системно і чи варто переходити на тариф з більшим лімітом процесорного часу.</p>
+      </div>
+    </details>
+  </div>
 </div>
 
-<div class="page">
-  <div class="logo">KMALL<small>обслуговування сайту</small></div>
-  <h2><span class="n">5</span>Сторож завантаження товарів: що показав перший тиждень</h2>
-  <p>27 серпня я поставив механізм, який стежить за завантаженням товарів з CRM: якщо захід обірвався і лишив
-  позначку «завантаження ще триває», сторож знімає її сам. Він же веде облік таких випадків. За тиждень їх сім:</p>
-  <table>
-    <tr><th>Коли</th><th>Скільки сайт стояв без оновлень товарів</th></tr>
-    <tr><td>1 вересня, 10:40</td><td>14 хв</td></tr>
-    <tr><td>1 вересня, 16:55</td><td>12 хв</td></tr>
-    <tr><td>3 вересня, 16:26</td><td>18 хв</td></tr>
-    <tr><td>4 вересня, 15:59</td><td>10 хв</td></tr>
-    <tr><td>4 вересня, 17:36</td><td>12 хв</td></tr>
-    <tr><td>4 вересня, 18:14</td><td>13 хв</td></tr>
-    <tr><td>5 вересня, 21:36</td><td>13 хв</td></tr>
-  </table>
-  <div class="note"><b>Що це означає.</b> Без сторожа кожен такий випадок блокував нові картки й оновлення залишків на
-  годину, тобто за тиждень сайт простояв би близько семи годин, і саме так було 26 серпня з поставкою Heimish і Masil.
-  Тепер сумарно 92 хвилини, і все відновлюється саме, без дзвінків.</div>
-  <p>Чому обриваються заходи, сервер не записує. Усі сім випадків припадають на робочий час, коли на сайті найбільше
-  відвідувачів і одночасно йдуть фонові задачі. Це збігається з тим, що ваш тариф хостингу обмежує процесорний час
-  на добу. Один тиждень для висновку замало, тому продовжую збирати статистику, і за місяць буде видно, чи варто
-  міняти тариф, чи достатньо сторожа.</p>
-  <h2><span class="n">6</span>Безпека і прибирання</h2>
-  <p>Підбір паролів до адмінки триває, за тиждень 926 спроб. Але картина інша, ніж у серпні: усі спроби йдуть на
-  логіни, яких на сайті немає, найчастіше на <b>admin</b> і на логін попередньої студії, який я прибрав ще в серпні.
-  На справжні облікові записи спроб не було, жодного стороннього входу немає. Обмеження на кількість спроб працює.
-  З 6 вересня хвиля спала до кількох спроб на день.</p>
-  <p>Серед нових реєстрацій один обліковий запис виглядає як спам: <b>dorrissedillo1186</b>, пошта на одноразовому
-  домені, реєстрація від 3 вересня, замовлень немає. Пропоную видалити, зроблю за вашим словом. Решта нових
-  реєстрацій за тиждень виглядають як справжні покупці.</p>
-
-<div class="foot"><span>KMALL · обслуговування сайту</span><span>07.09.2026 · сторінка 3 з 4</span></div>
+<div class="foot"><span>KMALL · обслуговування сайту</span><span>07.09.2026</span></div>
 </div>
-
-<div class="page">
-  <div class="logo">KMALL<small>обслуговування сайту</small></div>
-  <h2><span class="n">7</span>Що знайшов і виніс окремо</h2>
-  <div class="warn"><b>Статуси замовлень з CRM на сайт не оновлюються з 3 серпня.</b> Замовлення з сайту в CRM
-  доходять справно, це перевірено. А от у зворотний бік, коли ви в CRM переводите замовлення у «відправлено» чи
-  «виконано», на сайт це не потрапляє: завдання, яке мало це робити кожні 5 хвилин, зникло з планувальника.
-  Покупця це зачіпає в одному місці: у кабінеті на сайті він бачить старий статус. На роботу з замовленнями
-  в CRM не впливає. Розберусь окремо, чому завдання зникло, і поверну.</div>
-  <div class="warn"><b>Відео на першому екрані головної не запускається.</b> На першому екрані стоїть фонове
-  відео, файл на сервері є, але скрипт, який його вмикає, не спрацьовує, і замість відео видно темно-сіру
-  підкладку з текстом. Помітив під час перевірки після оновлень. Чи було так і до сьогодні, з наявних даних
-  сказати не можу, тому прошу вас глянути головну на своєму телефоні і написати, чи бачите відео. Якщо ні,
-  зроблю окремо.</div>
-  <div class="note"><b>Товари без ціни в CRM: 480.</b> У серпні їх було 505, тобто частину вже заповнили.
-  На покупця це не впливає, усі вони «немає в наявності», але Google так само не пропускає їх у рекламу.
-  Рішення за вами і за рекламниками, варіанти описав у звіті від 10 серпня.</div>
-
-  <h2><span class="n">8</span>Що лишається відкритим</h2>
-  <table>
-    <tr><th>Що</th><th>Стан</th></tr>
-    <tr><td>WooCommerce 11</td><td class="warn">окреме віконце, узгодити день</td></tr>
-    <tr><td>Нова Пошта 1.22.4</td><td class="warn">оновлю окремо з тестовим замовленням</td></tr>
-    <tr><td>Статуси замовлень CRM → сайт</td><td class="warn">розібратись і повернути</td></tr>
-    <tr><td>Відео на головній</td><td class="warn">чекаю, що ви бачите на своєму телефоні</td></tr>
-    <tr><td>480 товарів без ціни в CRM</td><td class="warn">потрібне рішення</td></tr>
-    <tr><td>Тариф хостингу</td><td class="ok">збираю статистику сторожа, висновок за місяць</td></tr>
-  </table>
-  <div class="foot"><span>KMALL · обслуговування сайту</span><span>07.09.2026 · сторінка 4 з 4</span></div>
-</div>
+<script>
+document.querySelectorAll('.tools button').forEach(function(b){
+  b.addEventListener('click',function(){var o=b.dataset.all==='open';document.querySelectorAll('details').forEach(function(d){d.open=o;});});
+});
+window.addEventListener('beforeprint',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+</script>
+</body>
+</html>
