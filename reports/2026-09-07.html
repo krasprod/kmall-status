@@ -77,6 +77,53 @@ td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
   .card{box-shadow:none;border:0;padding:0 0 10px;margin:0}
   details{page-break-inside:avoid}
 }
+/* ── місяць обслуговування: шахтар у тунелі ── */
+.month{border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,30px);margin-bottom:18px}
+.month h2{font-size:clamp(1.05rem,1.6vw,1.25rem);font-weight:600;margin-bottom:4px}
+.month .sub{color:var(--grey);font-size:.87rem;margin-bottom:14px}
+.month .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.month .pct{font-size:2.1rem;font-weight:700;color:var(--green-d);line-height:1;letter-spacing:-.02em}
+.month .left{font-size:.85rem;color:var(--grey)}
+.month .left b{color:var(--ink);font-weight:600}
+.tunnel{--p:0%;position:relative;height:38px;border-radius:12px;overflow:hidden;
+  background:
+    radial-gradient(circle at 12% 30%, rgba(255,255,255,.05) 0 2px, transparent 3px),
+    radial-gradient(circle at 48% 70%, rgba(255,255,255,.04) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 40%, rgba(255,255,255,.05) 0 1.5px, transparent 2.5px),
+    repeating-linear-gradient(135deg,#3b3a37 0 9px,#33322f 9px 18px);
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.35)}
+.tunnel .dug{position:absolute;left:0;top:0;bottom:0;width:var(--p);
+  background:linear-gradient(90deg,var(--green-d),var(--green) 60%,var(--green-l));
+  transition:width 1.6s cubic-bezier(.22,.61,.36,1)}
+.tunnel .dug::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(255,255,255,.14) 22px 24px);opacity:.6}
+.tunnel .glow{position:absolute;top:0;bottom:0;left:var(--p);width:90px;pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,220,120,.35),rgba(255,220,120,0));transition:left 1.6s cubic-bezier(.22,.61,.36,1);
+  animation:lamp 1.8s ease-in-out infinite}
+.tunnel .miner{position:absolute;top:2px;left:var(--p);width:44px;height:34px;margin-left:-14px;
+  transition:left 1.6s cubic-bezier(.22,.61,.36,1)}
+.tunnel .miner svg{width:44px;height:34px;overflow:visible;display:block}
+.tunnel .miner .arm{transform-origin:22px 17px;animation:swing .55s ease-in-out infinite}
+.tunnel .miner .body{animation:bob .55s ease-in-out infinite}
+.tunnel .chips{position:absolute;top:8px;left:calc(var(--p) + 22px);width:2px;height:2px;pointer-events:none;transition:left 1.6s cubic-bezier(.22,.61,.36,1)}
+.tunnel .chips i{position:absolute;left:0;top:0;width:3px;height:3px;border-radius:1px;background:#d9c9a3;opacity:0;animation:chip .55s ease-out infinite}
+.tunnel .chips i:nth-child(2){animation-delay:.12s;background:#bfae8a}
+.tunnel .chips i:nth-child(3){animation-delay:.24s;background:#e8dcbf}
+.tunnel .chips i:nth-child(4){animation-delay:.36s;background:#a89a7c}
+.tunnel .days{position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg,transparent 0 calc(100%/var(--days) - 1px),rgba(255,255,255,.12) calc(100%/var(--days) - 1px) calc(100%/var(--days)))}
+.tunnel .end{position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
+.month .cap{margin-top:9px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-l)}
+@keyframes swing{0%{transform:rotate(-38deg)}100%{transform:rotate(22deg)}}
+@keyframes bob{0%{transform:translateY(0)}100%{transform:translateY(1.2px)}}
+@keyframes chip{0%{opacity:0;transform:translate(0,0)}15%{opacity:1}100%{opacity:0;transform:translate(calc(6px + 10px*var(--k,1)),calc(-14px + 22px*var(--k,1)))}}
+@keyframes lamp{0%,100%{opacity:.75}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.tunnel .miner .arm,.tunnel .miner .body,.tunnel .chips i,.tunnel .glow{animation:none}}
+
+
+:root{--green-l:#8ed1a8;--grey-l:#9aa29c;--r:12px}
+.month{background:#fff;box-shadow:0 2px 14px rgba(29,31,30,.07);border:0}
+.month h2{text-transform:none;letter-spacing:0;color:var(--ink);margin:0 0 4px}
 </style>
 </head>
 <body>
@@ -95,6 +142,48 @@ td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
   </div>
   <p class="lead">Тиждень пройшов без інцидентів. Нижче все, що перевірено і зроблено, пунктами. Зелена позначка означає «в нормі», жовта «є про що домовитись». Кожен пункт розкривається, якщо потрібні деталі.</p>
 </div>
+
+<section class="month">
+  <h2>Місяць обслуговування</h2>
+  <p class="sub">Оплата за обслуговування проводиться в кінці кожного місяця. Зелена смуга показує, скільки місяця вже пройдено.</p>
+  <div class="top">
+    <span class="pct" id="mo-pct">0%</span>
+    <span class="left" id="mo-left"></span>
+  </div>
+  <div class="tunnel" id="mo-tunnel" style="--p:0%;--days:30" aria-hidden="true">
+    <div class="days"></div>
+    <div class="dug"></div>
+    <div class="glow"></div>
+    <div class="chips"><i style="--k:.6"></i><i style="--k:1"></i><i style="--k:.3"></i><i style="--k:.8"></i></div>
+    <div class="miner">
+      <svg viewBox="0 0 44 34" xmlns="http://www.w3.org/2000/svg">
+        <g class="body">
+          <!-- ноги -->
+          <rect x="9" y="24" width="5" height="9" rx="1.5" fill="#2c3e50"/>
+          <rect x="16" y="24" width="5" height="9" rx="1.5" fill="#2c3e50"/>
+          <rect x="8" y="31" width="7" height="3" rx="1" fill="#1b1f24"/>
+          <rect x="15" y="31" width="7" height="3" rx="1" fill="#1b1f24"/>
+          <!-- тулуб -->
+          <rect x="7" y="12" width="16" height="14" rx="4" fill="#e07b2a"/>
+          <rect x="9" y="14" width="12" height="3" rx="1.5" fill="#f5d36b"/>
+          <!-- голова + каска -->
+          <circle cx="15" cy="8" r="5.2" fill="#f1c9a5"/>
+          <path d="M8.5 8.5a6.5 6.5 0 0 1 13 0z" fill="#f4c20d"/>
+          <rect x="8" y="8" width="14" height="2" rx="1" fill="#d9a90b"/>
+          <circle cx="15" cy="4.5" r="1.6" fill="#fff7c2"/>
+        </g>
+        <g class="arm">
+          <!-- рука + кайло -->
+          <rect x="20" y="15" width="10" height="4" rx="2" fill="#f1c9a5"/>
+          <rect x="27" y="4" width="2.6" height="22" rx="1.3" fill="#8b5a2b"/>
+          <path d="M23 5.5c3-3 8-3 11 0l-1.6 1.8c-2.4-2.2-5.4-2.2-7.8 0z" fill="#6b7280"/>
+        </g>
+      </svg>
+    </div>
+    <span class="end">кінець місяця</span>
+  </div>
+  <div class="cap" id="mo-cap"></div>
+</section>
 
 <div class="card">
   <div class="tools"><button type="button" data-all="open">Розкрити все</button><button type="button" data-all="close">Згорнути все</button></div>
@@ -247,6 +336,27 @@ document.querySelectorAll('.tools button').forEach(function(b){
   b.addEventListener('click',function(){var o=b.dataset.all==='open';document.querySelectorAll('details').forEach(function(d){d.open=o;});});
 });
 window.addEventListener('beforeprint',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+</script>
+<script>
+(function(){
+  // Місяць обслуговування: скільки пройдено від 1-го числа до кінця поточного місяця (Київ).
+  var now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Kyiv'}));
+  var y=now.getFullYear(), m=now.getMonth(), d=now.getDate();
+  var days=new Date(y,m+1,0).getDate();
+  var pct=Math.round(d/days*100), left=days-d;
+  var mon=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
+  var monN=['січень','лютий','березень','квітень','травень','червень','липень','серпень','вересень','жовтень','листопад','грудень'];
+  var t=document.getElementById('mo-tunnel'); if(!t) return;
+  t.style.setProperty('--days',days);
+  document.getElementById('mo-pct').textContent=pct+'%';
+  document.getElementById('mo-left').innerHTML='<b>'+d+' '+mon[m]+'</b> · день '+d+' з '+days+' · до кінця місяця '+left+' '+(left%10==1&&left%100!=11?'день':(left%10>=2&&left%10<=4&&(left%100<10||left%100>=20)?'дні':'днів'));
+  var pad=function(n){return (n<10?'0':'')+n};
+  var last=pad(days)+'.'+pad(m+1)+'.'+y;
+  document.getElementById('mo-cap').textContent='Наступна оплата · '+last+' · 250 $';
+  var nd=document.getElementById('pay-next-d'), nw=document.getElementById('pay-next-what');
+  if(nd){nd.textContent=last;} if(nw){nw.textContent='Обслуговування сайту — '+monN[m];}
+  requestAnimationFrame(function(){ setTimeout(function(){ t.style.setProperty('--p',pct+'%'); },150); });
+})();
 </script>
 </body>
 </html>
