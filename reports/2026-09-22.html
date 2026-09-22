@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>KMALL — звіт з обслуговування сайту, 22 вересня 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Cormorant+Garamond:wght@600&display=swap&subset=cyrillic,latin" rel="stylesheet">
+<style>
+:root{
+  --green:#45976c; --green-d:#2b7e52; --green-t:#eef5f1;
+  --ink:#1d1f1e; --grey:#6f7772; --line:#e3e7e5; --soft:#f7f9f8; --bg:#eef0ef;
+  --amber:#9a6b00; --amber-b:#d9a520; --amber-t:#fdf6e3;
+  --blue:#2f5d8a; --blue-t:#eaf1f8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;color:var(--ink);background:var(--bg);font-size:15px;line-height:1.55;padding:14px 10px 50px}
+.wrap{max-width:760px;margin:0 auto}
+.backbar{margin:0 0 12px}
+.backbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:#fff;color:var(--green-d);border:1px solid #d9e2dd;border-radius:999px;padding:9px 18px 9px 14px;font-size:13px;font-weight:600;box-shadow:0 1px 6px rgba(29,31,30,.06);transition:.18s}
+.backbtn:hover{background:var(--green-t);border-color:var(--green);transform:translateX(-2px)}
+.card{background:#fff;border-radius:12px;box-shadow:0 2px 14px rgba(29,31,30,.07);padding:26px 28px;margin-bottom:14px}
+.logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;letter-spacing:.4em;text-indent:.4em;font-weight:600;text-align:center}
+.logo small{display:block;font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:.3em;color:var(--grey);margin-top:3px;text-indent:0;text-transform:uppercase}
+h1{font-size:24px;font-weight:700;letter-spacing:-.02em;margin:22px 0 4px;line-height:1.2}
+.sub{color:var(--grey);font-size:14px;margin-bottom:18px}
+.big{display:flex;gap:10px;flex-wrap:wrap}
+.big>div{flex:1 1 130px;border:1px solid var(--line);border-radius:10px;padding:14px 10px;text-align:center;background:var(--soft)}
+.big .v{font-size:24px;font-weight:700;color:var(--green-d);line-height:1.1}
+.big .l{font-size:10.5px;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-top:6px}
+.lead{margin-top:18px;font-size:15px}
+h2{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin:6px 0 10px}
+/* ── чекліст ── */
+.list{display:flex;flex-direction:column;gap:8px}
+details{border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}
+details[open]{border-color:#cfdad4;box-shadow:0 2px 10px rgba(29,31,30,.05)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:30px 1fr auto 18px;gap:12px;align-items:center;padding:13px 16px;font-size:15px}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:var(--soft)}
+.ic{width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:var(--green)}
+.ic.warn{background:var(--amber-b)}
+.ic.info{background:var(--blue)}
+.t{font-weight:600}
+.r{font-size:13px;color:var(--green-d);font-weight:600;white-space:nowrap;text-align:right}
+.r.warn{color:var(--amber)} .r.info{color:var(--blue)}
+.chev{width:10px;height:10px;border-right:2px solid #b7c1bb;border-bottom:2px solid #b7c1bb;transform:rotate(45deg);transition:.2s;margin-top:-4px;justify-self:end}
+details[open] .chev{transform:rotate(-135deg);margin-top:4px}
+.body{padding:2px 16px 16px 58px;font-size:14px;color:#2a2d2c;border-top:1px dashed var(--line)}
+.body p{margin:10px 0 0}
+.body ul{margin:8px 0 0 18px}
+.body li{margin-bottom:4px}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px}
+th{background:var(--soft);text-align:left;padding:7px 9px;font-weight:600;border-bottom:1.5px solid var(--line);font-size:12.5px}
+td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-top:10px}
+.warnbox{background:var(--amber-t);border:1px solid #e8d9a8;border-left:3px solid var(--amber-b);border-radius:8px;padding:10px 12px;margin-top:10px}
+.warnbox b{color:var(--amber)}
+.good{background:var(--green-t);border-left:3px solid var(--green);border-radius:8px;padding:10px 12px;margin-top:10px}
+.good b{color:var(--green-d)}
+.foot{display:flex;justify-content:space-between;font-size:12px;color:var(--grey);padding:6px 4px 0}
+.tools{display:flex;gap:10px;justify-content:flex-end;margin:-4px 0 10px}
+.tools button{font:inherit;font-size:12px;font-weight:600;color:var(--green-d);background:#fff;border:1px solid #d9e2dd;border-radius:999px;padding:6px 12px;cursor:pointer}
+.tools button:hover{background:var(--green-t)}
+@media (max-width:560px){
+  .card{padding:18px 16px}
+  summary{grid-template-columns:26px 1fr 14px;padding:12px 12px}
+  .r{grid-column:2;text-align:left;white-space:normal;font-size:12.5px;margin-top:-6px}
+  .body{padding-left:14px}
+  h1{font-size:21px}
+}
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .backbar,.tools,.chev{display:none!important}
+  .card{box-shadow:none;border:0;padding:0 0 10px;margin:0}
+  details{page-break-inside:avoid}
+}
+/* ── місяць обслуговування: шахтар у тунелі ── */
+.month{border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,30px);margin-bottom:18px}
+.month h2{font-size:clamp(1.05rem,1.6vw,1.25rem);font-weight:600;margin-bottom:4px}
+.month .sub{color:var(--grey);font-size:.87rem;margin-bottom:14px}
+.month .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.month .pct{font-size:2.1rem;font-weight:700;color:var(--green-d);line-height:1;letter-spacing:-.02em}
+.month .left{font-size:.85rem;color:var(--grey)}
+.month .left b{color:var(--ink);font-weight:600}
+.tunnel{--p:0%;position:relative;height:38px;border-radius:12px;overflow:hidden;
+  background:
+    radial-gradient(circle at 12% 30%, rgba(255,255,255,.05) 0 2px, transparent 3px),
+    radial-gradient(circle at 48% 70%, rgba(255,255,255,.04) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 40%, rgba(255,255,255,.05) 0 1.5px, transparent 2.5px),
+    repeating-linear-gradient(135deg,#3b3a37 0 9px,#33322f 9px 18px);
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.35)}
+.tunnel .dug{position:absolute;left:0;top:0;bottom:0;width:var(--p);
+  background:linear-gradient(90deg,var(--green-d),var(--green) 60%,var(--green-l));
+  transition:width 1.6s cubic-bezier(.22,.61,.36,1)}
+.tunnel .dug::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(255,255,255,.14) 22px 24px);opacity:.6}
+.tunnel .glow{position:absolute;top:0;bottom:0;left:var(--p);width:90px;pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,220,120,.35),rgba(255,220,120,0));transition:left 1.6s cubic-bezier(.22,.61,.36,1);
+  animation:lamp 1.8s ease-in-out infinite}
+.tunnel .miner{position:absolute;top:2px;left:var(--p);width:44px;height:34px;margin-left:-14px;
+  transition:left 1.6s cubic-bezier(.22,.61,.36,1)}
+.tunnel .miner svg{width:44px;height:34px;overflow:visible;display:block}
+.tunnel .miner .arm{transform-origin:22px 17px;animation:swing .55s ease-in-out infinite}
+.tunnel .miner .body{animation:bob .55s ease-in-out infinite}
+.tunnel .chips{position:absolute;top:8px;left:calc(var(--p) + 22px);width:2px;height:2px;pointer-events:none;transition:left 1.6s cubic-bezier(.22,.61,.36,1)}
+.tunnel .chips i{position:absolute;left:0;top:0;width:3px;height:3px;border-radius:1px;background:#d9c9a3;opacity:0;animation:chip .55s ease-out infinite}
+.tunnel .chips i:nth-child(2){animation-delay:.12s;background:#bfae8a}
+.tunnel .chips i:nth-child(3){animation-delay:.24s;background:#e8dcbf}
+.tunnel .chips i:nth-child(4){animation-delay:.36s;background:#a89a7c}
+.tunnel .days{position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg,transparent 0 calc(100%/var(--days) - 1px),rgba(255,255,255,.12) calc(100%/var(--days) - 1px) calc(100%/var(--days)))}
+.tunnel .end{position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
+.month .cap{margin-top:9px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-l)}
+@keyframes swing{0%{transform:rotate(-38deg)}100%{transform:rotate(22deg)}}
+@keyframes bob{0%{transform:translateY(0)}100%{transform:translateY(1.2px)}}
+@keyframes chip{0%{opacity:0;transform:translate(0,0)}15%{opacity:1}100%{opacity:0;transform:translate(calc(6px + 10px*var(--k,1)),calc(-14px + 22px*var(--k,1)))}}
+@keyframes lamp{0%,100%{opacity:.75}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.tunnel .miner .arm,.tunnel .miner .body,.tunnel .chips i,.tunnel .glow{animation:none}}
+
+
+:root{--green-l:#8ed1a8;--grey-l:#9aa29c;--r:12px}
+.month{background:#fff;box-shadow:0 2px 14px rgba(29,31,30,.07);border:0}
+.month h2{text-transform:none;letter-spacing:0;color:var(--ink);margin:0 0 4px}
+</style>
+</head>
+<body><div class="wrap">
+<div class="backbar"><a class="backbtn" href="../index.html"><span>←</span>До сторінки обслуговування</a></div>
+
+<div class="card">
+  <div class="logo">KMALL<small>обслуговування сайту</small></div>
+  <h1>Щотижнева перевірка та профілактика</h1>
+  <div class="sub">22 вересня 2026, вівторок · звіт для Вікторії та Володимира</div>
+  <div class="big">
+    <div><div class="v">28</div><div class="l">перевірок</div></div>
+    <div><div class="v">8</div><div class="l">оновлень</div></div>
+    <div><div class="v">78 / 78</div><div class="l">замовлень дійшло в CRM</div></div>
+    <div><div class="v">0</div><div class="l">критичних проблем</div></div>
+  </div>
+  <p class="lead">Тиждень без поломок. Замовлень стало помітно більше, 78 проти 44 тиждень тому, і всі доїхали в CRM. Одне спостереження виніс окремо: завантаження товарів обривалось удвічі частіше, ніж минулого тижня. Деталі в розділі «Сторож».</p>
+</div>
+<section class="month">
+  <h2>Місяць обслуговування</h2>
+  <p class="sub">Оплата за обслуговування проводиться в кінці кожного місяця. Зелена смуга показує, скільки місяця вже пройдено.</p>
+  <div class="top">
+    <span class="pct" id="mo-pct">0%</span>
+    <span class="left" id="mo-left"></span>
+  </div>
+  <div class="tunnel" id="mo-tunnel" style="--p:0%;--days:30" aria-hidden="true">
+    <div class="days"></div>
+    <div class="dug"></div>
+    <div class="glow"></div>
+    <div class="chips"><i style="--k:.6"></i><i style="--k:1"></i><i style="--k:.3"></i><i style="--k:.8"></i></div>
+    <div class="miner">
+      <svg viewBox="0 0 44 34" xmlns="http://www.w3.org/2000/svg">
+        <g class="body">
+          <!-- ноги -->
+          <rect x="9" y="24" width="5" height="9" rx="1.5" fill="#2c3e50"/>
+          <rect x="16" y="24" width="5" height="9" rx="1.5" fill="#2c3e50"/>
+          <rect x="8" y="31" width="7" height="3" rx="1" fill="#1b1f24"/>
+          <rect x="15" y="31" width="7" height="3" rx="1" fill="#1b1f24"/>
+          <!-- тулуб -->
+          <rect x="7" y="12" width="16" height="14" rx="4" fill="#e07b2a"/>
+          <rect x="9" y="14" width="12" height="3" rx="1.5" fill="#f5d36b"/>
+          <!-- голова + каска -->
+          <circle cx="15" cy="8" r="5.2" fill="#f1c9a5"/>
+          <path d="M8.5 8.5a6.5 6.5 0 0 1 13 0z" fill="#f4c20d"/>
+          <rect x="8" y="8" width="14" height="2" rx="1" fill="#d9a90b"/>
+          <circle cx="15" cy="4.5" r="1.6" fill="#fff7c2"/>
+        </g>
+        <g class="arm">
+          <!-- рука + кайло -->
+          <rect x="20" y="15" width="10" height="4" rx="2" fill="#f1c9a5"/>
+          <rect x="27" y="4" width="2.6" height="22" rx="1.3" fill="#8b5a2b"/>
+          <path d="M23 5.5c3-3 8-3 11 0l-1.6 1.8c-2.4-2.2-5.4-2.2-7.8 0z" fill="#6b7280"/>
+        </g>
+      </svg>
+    </div>
+    <span class="end">кінець місяця</span>
+  </div>
+  <div class="cap" id="mo-cap"></div>
+</section>
+
+
+<div class="card">
+  <div class="tools"><button type="button" data-all="open">Розкрити все</button><button type="button" data-all="close">Згорнути все</button></div>
+
+  <h2>Сайт</h2>
+  <div class="list">
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Сторінки відкриваються, помилок немає</span><span class="r">10 з 10</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Головна, каталог, картка товару, кошик, оформлення, кабінет, контакти, блог, пошук, карта сайту. Усі відповідають кодом 200, помилок PHP немає на жодній. Перевірив двічі: до оновлень і після.</p>
+        <p>Швидкість сторінок 1,2–1,5 секунди, головна з кешу швидша.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Сертифікат, ядро WordPress, тема</span><span class="r">актуальні</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Сертифікат безпеки чинний до 1 листопада. WordPress оновився сам до 7.1.1, це дрібне оновлення безпеки. Тема 1.5.5, оновлень не пропонує.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Ціни, кошик, оформлення замовлення</span><span class="r">працюють</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Перевірив як покупець, без входу в адмінку. Ціни сходяться з націнками по брендах: Medi-Peel 831, Dr. Jart+ 856, RITUALS 850 (після того, як минулого тижня повернули йому нульову націнку). Товар додається в кошик, сума рахується правильно, сторінка оформлення з полями і оплатою на місці.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Сервер: файли, база, фонові задачі</span><span class="r">в нормі</span><span class="chev"></span></summary>
+      <div class="body">
+        <ul>
+          <li>Сторонніх файлів на сервері немає, службові файли сайту не змінені.</li>
+          <li>База 159 МБ, за два тижні виросла на 6 МБ, це звичайне зростання від нових замовлень.</li>
+          <li>Черга фонових завдань чиста: прострочених немає, у журналі помилок за сьогодні жодної.</li>
+          <li>Перед оновленнями зробив повну копію бази разом із замовленнями.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <h2 style="margin-top:22px">Замовлення і звʼязка з CRM</h2>
+  <div class="list">
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Замовлення доходять у CRM</span><span class="r">78 з 78</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Звірив обидві бази за 7 днів: на сайті 78 замовлень, у CRM усі 78. Жодне не загубилось. Тиждень тому було 44, тобто потік зріс майже вдвічі.</p>
+        <p>З них виконано 34 на 54 722 грн, у роботі 28, очікують оплати 8, скасовано 3.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Статуси замовлень з CRM на сайт</span><span class="r">працюють</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Те, що лагодили 7 вересня, працює: завдання на місці, проходить щогодини, останній прохід сьогодні об 11:31. Покупець у кабінеті бачить свій актуальний статус.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Товари з CRM заїжджають на сайт</span><span class="r">кожні 5 хв</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Останні 20 заходів успішні, у каталозі 1358 товарів, за тиждень додалось 15 нових карток. У наявності 415 позицій.</p>
+      </div>
+    </details>
+  </div>
+
+  <h2 style="margin-top:22px">Сторож завантаження товарів</h2>
+  <div class="list">
+    <details>
+      <summary><span class="ic warn">!</span><span class="t">Обривів стало вдвічі більше</span><span class="r warn">16 за тиждень</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Нагадаю, що це таке: іноді завантаження товарів з CRM обривається на середині і лишає позначку «завантаження ще триває», через яку сайт перестає приймати нові картки. Сторож, поставлений 27 серпня, знімає таку позначку сам і веде облік.</p>
+        <table>
+          <tr><th>Тиждень</th><th>Обривів</th><th>Сумарний простій</th></tr>
+          <tr><td>1–7 вересня</td><td>7</td><td>близько 1,5 години</td></tr>
+          <tr><td>15–22 вересня</td><td><b>16</b></td><td><b>близько 3,5 години</b></td></tr>
+        </table>
+        <div class="warnbox"><b>Головне: 12 з 16 обривів припали на три доби, з 15 по 17 вересня.</b> Це не рівномірний фон, а сплеск. У ті самі дні потік замовлень був найбільший за весь час нашого спостереження. Схоже, що сайту банально не вистачає ресурсу, коли на нього одночасно йдуть покупці і фонові завдання.</div>
+        <p>Без сторожа кожен такий обрив зупиняв би оновлення товарів приблизно на годину. За цей тиждень набралося б близько 16 годин, коли нові картки й залишки не оновлювались. Завдяки сторожу вийшло 3,5 години, і помічати це вам не довелось.</p>
+        <p><b>Що це означає на практиці.</b> Сторож лікує наслідок, а не причину. Причина, найімовірніше, у тарифі хостингу: він дає обмежений час роботи процесора на добу, і в пікові дні цього не вистачає. Я збираю статистику з 27 серпня, за місяць картина вже видна. Пропоную наступним кроком порахувати, скільки коштує перехід на тариф із більшим запасом, і показати вам цифри до того, як почнеться високий сезон.</p>
+      </div>
+    </details>
+  </div>
+
+  <h2 style="margin-top:22px">Безпека</h2>
+  <div class="list">
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Підбір паролів до адмінки</span><span class="r">спав удвічі</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>489 спроб за тиждень проти 926 минулого. Усі йдуть на логіни, яких на сайті немає: найчастіше пробують <b>admin</b> і логін попередньої студії. На ваші справжні облікові записи спроб не було, стороннього входу немає, обмеження працює.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Облікові записи</span><span class="r">адміністраторів 3</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Адміністраторів троє, ті самі: ви двоє і я. За тиждень зареєструвалось 25 покупців, загалом на сайті 286 облікових записів.</p>
+        <div class="note">Два записи виглядають як помилка при реєстрації: пошта з одруківкою в домені (<b>gmail.co.com</b> і <b>gmai.com</b>). Такі люди не отримають ні листа про замовлення, ні відновлення пароля. Якщо серед них є ваші покупці, варто зв'язатись і поправити пошту.</div>
+      </div>
+    </details>
+  </div>
+
+  <h2 style="margin-top:22px">Оновлення</h2>
+  <div class="list">
+    <details>
+      <summary><span class="ic">✓</span><span class="t">Оновлено розширення</span><span class="r">8</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Перед роботами зробив копію бази. Після оновлень перевірив сторінки, ціни, кошик, оформлення і вхід, очистив кеш сторінок.</p>
+        <table>
+          <tr><th>Що</th><th>Було</th><th>Стало</th></tr>
+          <tr><td>PRO Elements (розширення конструктора)</td><td>4.2.2</td><td>4.2.3</td></tr>
+          <tr><td>Yoast SEO</td><td>28.4</td><td>28.5</td></tr>
+          <tr><td>WP-Optimize (кеш і чистка бази)</td><td>4.6.1</td><td>4.7.0</td></tr>
+          <tr><td>Flexible Checkout Fields (поля оформлення)</td><td>4.1.41</td><td>4.1.42</td></tr>
+          <tr><td>Redux Framework (основа налаштувань теми)</td><td>4.5.13</td><td>4.5.15</td></tr>
+          <tr><td>Revopic (відгуки з фото)</td><td>1.2.29</td><td>1.2.30</td></tr>
+          <tr><td>Simple History (журнал дій)</td><td>5.32.0</td><td>5.33.0</td></tr>
+          <tr><td>All-in-One WP Migration (резервні копії)</td><td>7.110</td><td>7.111</td></tr>
+        </table>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic warn">!</span><span class="t">Свідомо не оновлював</span><span class="r warn">2, потрібне окреме віконце</span><span class="chev"></span></summary>
+      <div class="body">
+        <div class="warnbox"><b>WooCommerce, 10.9.4 → 11.1.1.</b> Нова велика версія. На сайті переписані шаблони магазину, два розширення для звʼязки з CRM і платіжний модуль, встановлений вручну. Таке робиться в окреме віконце з перевіркою оформлення замовлення після, а не разом з іншими оновленнями.</div>
+        <div class="warnbox"><b>Нова Пошта (WC Ukraine Shipping), 1.21.12 → 1.23.0.</b> Через цей модуль проходить кожне замовлення, а накопичилось уже кілька версій. Оновлю окремо і одразу зроблю тестове замовлення з вибором відділення.</div>
+        <p>Обидва пункти висять другий тиждень. Пропоную зробити їх у найспокійніший для вас день, коли замовлень найменше. Скажіть, коли зручно, я підлаштуюсь.</p>
+      </div>
+    </details>
+  </div>
+
+  <h2 style="margin-top:22px">Лишається відкритим</h2>
+  <div class="list">
+    <details>
+      <summary><span class="ic info">i</span><span class="t">Розділ Sale порожній</span><span class="r info">чекаємо на вас</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Після того як 14 вересня прибрали акцію з Ритуалс, акційних товарів на сайті немає. Розділ Sale у меню лишився, але він порожній. Скажіть, який бренд і яку знижку туди поставити, зроблю.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="ic info">i</span><span class="t">Тариф хостингу</span><span class="r info">пора рахувати</span><span class="chev"></span></summary>
+      <div class="body">
+        <p>Статистика за місяць зібрана, картина видна (див. розділ про сторожа). Наступний крок за мною: порахувати вартість переходу на тариф із більшим запасом і показати вам цифри.</p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="foot"><span>KMALL · обслуговування сайту</span><span>22.09.2026</span></div>
+</div>
+<script>
+(function(){
+  // Місяць обслуговування: скільки пройдено від 1-го числа до кінця поточного місяця (Київ).
+  var now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Kyiv'}));
+  var y=now.getFullYear(), m=now.getMonth(), d=now.getDate();
+  var days=new Date(y,m+1,0).getDate();
+  var pct=Math.round(d/days*100), left=days-d;
+  var mon=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
+  var monN=['січень','лютий','березень','квітень','травень','червень','липень','серпень','вересень','жовтень','листопад','грудень'];
+  var t=document.getElementById('mo-tunnel'); if(!t) return;
+  t.style.setProperty('--days',days);
+  document.getElementById('mo-pct').textContent=pct+'%';
+  document.getElementById('mo-left').innerHTML='<b>'+d+' '+mon[m]+'</b> · день '+d+' з '+days+' · до кінця місяця '+left+' '+(left%10==1&&left%100!=11?'день':(left%10>=2&&left%10<=4&&(left%100<10||left%100>=20)?'дні':'днів'));
+  var pad=function(n){return (n<10?'0':'')+n};
+  var last=pad(days)+'.'+pad(m+1)+'.'+y;
+  document.getElementById('mo-cap').textContent='Наступна оплата · '+last+' · 250 $';
+  var nd=document.getElementById('pay-next-d'), nw=document.getElementById('pay-next-what');
+  if(nd){nd.textContent=last;} if(nw){nw.textContent='Обслуговування сайту — '+monN[m];}
+  requestAnimationFrame(function(){ setTimeout(function(){ t.style.setProperty('--p',pct+'%'); },150); });
+})();
+</script></body>
+</html>
